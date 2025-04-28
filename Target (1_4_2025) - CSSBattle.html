@@ -1,0 +1,31 @@
+<div class="one"></div>
+<div class="second"></div>
+
+<style>
+  * {
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    position: relative;
+    height: 100vh;
+    background-color: #282828;
+  }
+
+  .one {
+    width: 230px;
+    height: 100%;
+    background-image: 
+      linear-gradient(to bottom, #EAC049 20%, #51A499 20%, #51A499 80%, #EAC049 80%);
+  }
+
+  .second {
+    position: absolute;
+    left: 230px;
+    top: 0;
+    width: calc(100% - 230px);
+    height: 100%;
+    background-image:linear-gradient(to bottom, #51A499 20%, #EAC049 20%, #EAC049 80%, #51A499 80%);
+  }
+</style>

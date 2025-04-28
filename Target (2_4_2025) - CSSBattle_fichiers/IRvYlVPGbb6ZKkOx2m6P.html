@@ -1,0 +1,51 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style>body{overflow:hidden}</style></head><body><div class="rectangle-bottom"></div>
+<div class="rectangle-up"></div>
+<div class="circle"></div>
+<div class="inner-circle"></div>
+<style>
+  body{
+    display:flex;
+    justify-content:center;
+    align-items:end;
+    box-shadow:border-box;
+    height:100%;
+    background-color:#5A9F48;
+  }
+  .rectangle-bottom {
+    width: 90px;
+    height: 75vh;
+    background-image: linear-gradient(to right, #394257 33%, #39425733 33%, #5A9F48 66%, #5A9F48 66%, #394257 66%);
+
+  }
+
+  .rectangle-up {
+    position:absolute;
+    width: 200px;
+    height: 80px;
+    background-color:#394257;
+    top:70px;
+    z-index:1;
+  }
+  .circle{
+    position:absolute;
+    border:30px solid #394257;
+    width: 95px;
+    height: 90px;
+    border-radius:50%;
+    top:80px;
+    z-index:2;
+  }
+
+  .inner-circle{
+    position:absolute;
+    width: 100px;
+    height: 100px;
+    border-radius:50%;
+    top:100px;
+    background-color:#5A9F48;
+    z-index:3;
+  }
+
+
+</style></body></html>

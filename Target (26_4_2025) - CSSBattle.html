@@ -1,0 +1,56 @@
+<div class="circle-1"></div>
+<div class="inner"></div>
+<div class="rectangle"></div>
+<div class="circle-2"></div>
+<div class="circle-3"></div>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #282828;
+  }
+  .circle-1 {
+    postion:absolute;
+    width: 40vh;
+    height: 40vh;
+    background-color: #282828;
+    border-radius: 50%;
+    z-index:1;
+  }
+  .inner{
+    position:absolute;
+    height:60px;
+    width:60px;
+    background-color:#EA3323;
+    z-index:2;
+    border-radius:50%;
+  }
+
+  .rectangle{
+    position:absolute;
+    background-color:#282828;
+    width:20px;
+    height:200px;
+    z-index:3;
+  }
+
+  .circle-2 {
+    width: 40vh;
+    height: 40vh;
+    background-color: #EA3323;
+    border-radius: 50%;
+    position:absolute;
+    left:100px;
+  }
+  .circle-3 {
+    width: 40vh;
+    height: 40vh;
+    background-color: #EA3323;
+    border-radius: 50%;
+    position:absolute;
+    left:180px;
+  }
+</style>
