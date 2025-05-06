@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html style=""><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style>.ͼ1.cm-focused {outline: 1px dotted #212121;}
+.ͼ1 {position: relative !important; box-sizing: border-box; display: flex !important; flex-direction: column;}
+.ͼ1 .cm-scroller {display: flex !important; align-items: flex-start !important; font-family: monospace; line-height: 1.4; height: 100%; overflow-x: auto; position: relative; z-index: 0; overflow-anchor: none;}
+.ͼ1 .cm-content[contenteditable=true] {-webkit-user-modify: read-write-plaintext-only;}
+.ͼ1 .cm-content {margin: 0; flex-grow: 2; flex-shrink: 0; display: block; white-space: pre; word-wrap: normal; box-sizing: border-box; min-height: 100%; padding: 4px 0; outline: none;}
+.ͼ1 .cm-lineWrapping {white-space: pre-wrap; white-space: break-spaces; word-break: break-word; overflow-wrap: anywhere; flex-shrink: 1;}
+.ͼ2 .cm-content {caret-color: black;}
+.ͼ3 .cm-content {caret-color: white;}
+.ͼ1 .cm-line {display: block; padding: 0 2px 0 6px;}
+.ͼ1 .cm-layer > * {position: absolute;}
+.ͼ1 .cm-layer {position: absolute; left: 0; top: 0; contain: size style;}
+.ͼ2 .cm-selectionBackground {background: #d9d9d9;}
+.ͼ3 .cm-selectionBackground {background: #222;}
+.ͼ2.cm-focused > .cm-scroller > .cm-selectionLayer .cm-selectionBackground {background: #d7d4f0;}
+.ͼ3.cm-focused > .cm-scroller > .cm-selectionLayer .cm-selectionBackground {background: #233;}
+.ͼ1 .cm-cursorLayer {pointer-events: none;}
+.ͼ1.cm-focused > .cm-scroller > .cm-cursorLayer {animation: steps(1) cm-blink 1.2s infinite;}
+@keyframes cm-blink {50% {opacity: 0;}}
+@keyframes cm-blink2 {50% {opacity: 0;}}
+.ͼ1 .cm-cursor, .ͼ1 .cm-dropCursor {border-left: 1.2px solid black; margin-left: -0.6px; pointer-events: none;}
+.ͼ1 .cm-cursor {display: none;}
+.ͼ3 .cm-cursor {border-left-color: #444;}
+.ͼ1 .cm-dropCursor {position: absolute;}
+.ͼ1.cm-focused > .cm-scroller > .cm-cursorLayer .cm-cursor {display: block;}
+.ͼ1 .cm-iso {unicode-bidi: isolate;}
+.ͼ1 .cm-announced {position: fixed; top: -10000px;}
+@media print {.ͼ1 .cm-announced {display: none;}}
+.ͼ2 .cm-activeLine {background-color: #cceeff44;}
+.ͼ3 .cm-activeLine {background-color: #99eeff33;}
+.ͼ2 .cm-specialChar {color: red;}
+.ͼ3 .cm-specialChar {color: #f78;}
+.ͼ1 .cm-gutters {flex-shrink: 0; display: flex; height: 100%; box-sizing: border-box; inset-inline-start: 0; z-index: 200;}
+.ͼ2 .cm-gutters {background-color: #f5f5f5; color: #6c6c6c; border-right: 1px solid #ddd;}
+.ͼ3 .cm-gutters {background-color: #333338; color: #ccc;}
+.ͼ1 .cm-gutter {display: flex !important; flex-direction: column; flex-shrink: 0; box-sizing: border-box; min-height: 100%; overflow: hidden;}
+.ͼ1 .cm-gutterElement {box-sizing: border-box;}
+.ͼ1 .cm-lineNumbers .cm-gutterElement {padding: 0 3px 0 5px; min-width: 20px; text-align: right; white-space: nowrap;}
+.ͼ2 .cm-activeLineGutter {background-color: #e2f2ff;}
+.ͼ3 .cm-activeLineGutter {background-color: #222227;}
+.ͼ1 .cm-panels {box-sizing: border-box; position: sticky; left: 0; right: 0; z-index: 300;}
+.ͼ2 .cm-panels {background-color: #f5f5f5; color: black;}
+.ͼ2 .cm-panels-top {border-bottom: 1px solid #ddd;}
+.ͼ2 .cm-panels-bottom {border-top: 1px solid #ddd;}
+.ͼ3 .cm-panels {background-color: #333338; color: white;}
+.ͼ1 .cm-tab {display: inline-block; overflow: hidden; vertical-align: bottom;}
+.ͼ1 .cm-widgetBuffer {vertical-align: text-top; height: 1em; width: 0; display: inline;}
+.ͼ1 .cm-placeholder {color: #888; display: inline-block; vertical-align: top;}
+.ͼ1 .cm-highlightSpace {background-image: radial-gradient(circle at 50% 55%, #aaa 20%, transparent 5%); background-position: center;}
+.ͼ1 .cm-highlightTab {background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="20"><path stroke="%23888" stroke-width="1" fill="none" d="M1 10H196L190 5M190 15L196 10M197 4L197 16"/></svg>'); background-size: auto 100%; background-position: right 90%; background-repeat: no-repeat;}
+.ͼ1 .cm-trailingSpace {background-color: #ff332255;}
+.ͼ1 .cm-button {vertical-align: middle; color: inherit; font-size: 70%; padding: .2em 1em; border-radius: 1px;}
+.ͼ2 .cm-button:active {background-image: linear-gradient(#b4b4b4, #d0d3d6);}
+.ͼ2 .cm-button {background-image: linear-gradient(#eff1f5, #d9d9df); border: 1px solid #888;}
+.ͼ3 .cm-button:active {background-image: linear-gradient(#111, #333);}
+.ͼ3 .cm-button {background-image: linear-gradient(#393939, #111); border: 1px solid #888;}
+.ͼ1 .cm-textfield {vertical-align: middle; color: inherit; font-size: 70%; border: 1px solid silver; padding: .2em .5em;}
+.ͼ2 .cm-textfield {background-color: white;}
+.ͼ3 .cm-textfield {border: 1px solid #555; background-color: inherit;}
+.ͼ1 .cm-selectionMatch {background-color: #99ff7780;}
+.ͼ1 .cm-searchMatch .cm-selectionMatch {background-color: transparent;}
+.ͼ1 .cm-tooltip.cm-tooltip-autocomplete > ul > li, .ͼ1 .cm-tooltip.cm-tooltip-autocomplete > ul > completion-section {padding: 1px 3px; line-height: 1.2;}
+.ͼ1 .cm-tooltip.cm-tooltip-autocomplete > ul > li {overflow-x: hidden; text-overflow: ellipsis; cursor: pointer;}
+.ͼ1 .cm-tooltip.cm-tooltip-autocomplete > ul > completion-section {display: list-item; border-bottom: 1px solid silver; padding-left: 0.5em; opacity: 0.7;}
+.ͼ1 .cm-tooltip.cm-tooltip-autocomplete > ul {font-family: monospace; white-space: nowrap; overflow: hidden auto; max-width: 700px; max-width: min(700px, 95vw); min-width: 250px; max-height: 10em; height: 100%; list-style: none; margin: 0; padding: 0;}
+.ͼ2 .cm-tooltip-autocomplete ul li[aria-selected] {background: #17c; color: white;}
+.ͼ2 .cm-tooltip-autocomplete-disabled ul li[aria-selected] {background: #777;}
+.ͼ3 .cm-tooltip-autocomplete ul li[aria-selected] {background: #347; color: white;}
+.ͼ3 .cm-tooltip-autocomplete-disabled ul li[aria-selected] {background: #444;}
+.ͼ1 .cm-completionListIncompleteTop:before, .ͼ1 .cm-completionListIncompleteBottom:after {content: "···"; opacity: 0.5; display: block; text-align: center;}
+.ͼ1 .cm-tooltip.cm-completionInfo {position: absolute; padding: 3px 9px; width: max-content; max-width: 400px; box-sizing: border-box; white-space: pre-line;}
+.ͼ1 .cm-completionInfo.cm-completionInfo-left {right: 100%;}
+.ͼ1 .cm-completionInfo.cm-completionInfo-right {left: 100%;}
+.ͼ1 .cm-completionInfo.cm-completionInfo-left-narrow {right: 30px;}
+.ͼ1 .cm-completionInfo.cm-completionInfo-right-narrow {left: 30px;}
+.ͼ2 .cm-snippetField {background-color: #00000022;}
+.ͼ3 .cm-snippetField {background-color: #ffffff22;}
+.ͼ1 .cm-snippetFieldPosition {vertical-align: text-top; width: 0; height: 1.15em; display: inline-block; margin: 0 -0.7px -.7em; border-left: 1.4px dotted #888;}
+.ͼ1 .cm-completionMatchedText {text-decoration: underline;}
+.ͼ1 .cm-completionDetail {margin-left: 0.5em; font-style: italic;}
+.ͼ1 .cm-completionIcon {font-size: 90%; width: .8em; display: inline-block; text-align: center; padding-right: .6em; opacity: 0.6; box-sizing: content-box;}
+.ͼ1 .cm-completionIcon-function:after, .ͼ1 .cm-completionIcon-method:after {content: 'ƒ';}
+.ͼ1 .cm-completionIcon-class:after {content: '○';}
+.ͼ1 .cm-completionIcon-interface:after {content: '◌';}
+.ͼ1 .cm-completionIcon-variable:after {content: '𝑥';}
+.ͼ1 .cm-completionIcon-constant:after {content: '𝐶';}
+.ͼ1 .cm-completionIcon-type:after {content: '𝑡';}
+.ͼ1 .cm-completionIcon-enum:after {content: '∪';}
+.ͼ1 .cm-completionIcon-property:after {content: '□';}
+.ͼ1 .cm-completionIcon-keyword:after {content: '🔑︎';}
+.ͼ1 .cm-completionIcon-namespace:after {content: '▢';}
+.ͼ1 .cm-completionIcon-text:after {content: 'abc'; font-size: 50%; vertical-align: middle;}
+.ͼ1 .cm-tooltip {z-index: 100; box-sizing: border-box;}
+.ͼ2 .cm-tooltip {border: 1px solid #bbb; background-color: #f5f5f5;}
+.ͼ2 .cm-tooltip-section:not(:first-child) {border-top: 1px solid #bbb;}
+.ͼ3 .cm-tooltip {background-color: #333338; color: white;}
+.ͼ1 .cm-tooltip-arrow:before, .ͼ1 .cm-tooltip-arrow:after {content: ''; position: absolute; width: 0; height: 0; border-left: 7px solid transparent; border-right: 7px solid transparent;}
+.ͼ1 .cm-tooltip-above .cm-tooltip-arrow:before {border-top: 7px solid #bbb;}
+.ͼ1 .cm-tooltip-above .cm-tooltip-arrow:after {border-top: 7px solid #f5f5f5; bottom: 1px;}
+.ͼ1 .cm-tooltip-above .cm-tooltip-arrow {bottom: -7px;}
+.ͼ1 .cm-tooltip-below .cm-tooltip-arrow:before {border-bottom: 7px solid #bbb;}
+.ͼ1 .cm-tooltip-below .cm-tooltip-arrow:after {border-bottom: 7px solid #f5f5f5; top: 1px;}
+.ͼ1 .cm-tooltip-below .cm-tooltip-arrow {top: -7px;}
+.ͼ1 .cm-tooltip-arrow {height: 7px; width: 14px; position: absolute; z-index: -1; overflow: hidden;}
+.ͼ3 .cm-tooltip .cm-tooltip-arrow:before {border-top-color: #333338; border-bottom-color: #333338;}
+.ͼ3 .cm-tooltip .cm-tooltip-arrow:after {border-top-color: transparent; border-bottom-color: transparent;}
+.ͼ1.cm-focused .cm-matchingBracket {background-color: #328c8252;}
+.ͼ1.cm-focused .cm-nonmatchingBracket {background-color: #bb555544;}
+.ͼ1 .cm-foldPlaceholder {background-color: #eee; border: 1px solid #ddd; color: #888; border-radius: .2em; margin: 0 1px; padding: 0 1px; cursor: pointer;}
+.ͼ1 .cm-foldGutter span {padding: 0 1px; cursor: pointer;}
+.ͼ1f {color: #6c6783;}
+.ͼ1g {color: #ffcc99;}
+.ͼ1h {color: #eeebff;}
+.ͼ1i {color: #7a63ee;}
+.ͼ1j {color: #ffad5c;}
+.ͼ1k {color: #ffb870;}
+.ͼ1l {color: #9a86fd;}
+.ͼ1m {color: #e09142;}
+.ͼ1e .cm-gutters {background-color: #2a2734; color: #545167;}
+.ͼ1e {background-color: #2a2734; color: #6c6783;}
+.ͼ1e .cm-content {caret-color: #ffad5c;}
+.ͼ1e .cm-cursor, .ͼ1e .cm-dropCursor {border-left-color: #ffad5c;}
+.ͼ1e .cm-activeLine {background-color: #36334280;}
+.ͼ1e .cm-activeLineGutter {background-color: #36334280;}
+.ͼ1e.cm-focused .cm-selectionBackground, .ͼ1e .cm-line::selection, .ͼ1e .cm-selectionLayer .cm-selectionBackground, .ͼ1e .cm-content ::selection {background: #91ff6c26 !important;}
+.ͼ1e .cm-selectionMatch {background-color: #91ff6c26;}
+.ͼ5 {color: #404740;}
+.ͼ6 {text-decoration: underline;}
+.ͼ7 {text-decoration: underline; font-weight: bold;}
+.ͼ8 {font-style: italic;}
+.ͼ9 {font-weight: bold;}
+.ͼa {text-decoration: line-through;}
+.ͼb {color: #708;}
+.ͼc {color: #219;}
+.ͼd {color: #164;}
+.ͼe {color: #a11;}
+.ͼf {color: #e40;}
+.ͼg {color: #00f;}
+.ͼh {color: #30a;}
+.ͼi {color: #085;}
+.ͼj {color: #167;}
+.ͼk {color: #256;}
+.ͼl {color: #00c;}
+.ͼm {color: #940;}
+.ͼn {color: #f00;}
+.ͼy0 .cm-scroller {height: 100% !important;}
+.ͼxz .cm-scroller {height: 100% !important;}
+.ͼxy .cm-scroller {height: 100% !important;}
+.ͼxx .cm-scroller {height: 100% !important;}
+.ͼxw .cm-scroller {height: 100% !important;}
+.ͼxv .cm-scroller {height: 100% !important;}
+.ͼxu .cm-scroller {height: 100% !important;}
+.ͼxt .cm-scroller {height: 100% !important;}
+.ͼxs .cm-scroller {height: 100% !important;}
+.ͼxr .cm-scroller {height: 100% !important;}
+.ͼxq .cm-scroller {height: 100% !important;}
+.ͼxp .cm-scroller {height: 100% !important;}
+.ͼxo .cm-scroller {height: 100% !important;}
+.ͼxn .cm-scroller {height: 100% !important;}
+.ͼxm .cm-scroller {height: 100% !important;}
+.ͼxl .cm-scroller {height: 100% !important;}
+.ͼxk .cm-scroller {height: 100% !important;}
+.ͼxj .cm-scroller {height: 100% !important;}
+.ͼxi .cm-scroller {height: 100% !important;}
+.ͼxh .cm-scroller {height: 100% !important;}
+.ͼxg .cm-scroller {height: 100% !important;}
+.ͼxf .cm-scroller {height: 100% !important;}
+.ͼxe .cm-scroller {height: 100% !important;}
+.ͼxd .cm-scroller {height: 100% !important;}
+.ͼxc .cm-scroller {height: 100% !important;}
+.ͼxb .cm-scroller {height: 100% !important;}
+.ͼxa .cm-scroller {height: 100% !important;}
+.ͼx9 .cm-scroller {height: 100% !important;}
+.ͼx8 .cm-scroller {height: 100% !important;}
+.ͼx7 .cm-scroller {height: 100% !important;}
+.ͼx6 .cm-scroller {height: 100% !important;}
+.ͼx5 .cm-scroller {height: 100% !important;}
+.ͼx4 .cm-scroller {height: 100% !important;}
+.ͼx3 .cm-scroller {height: 100% !important;}
+.ͼx2 .cm-scroller {height: 100% !important;}
+.ͼx1 .cm-scroller {height: 100% !important;}
+.ͼx0 .cm-scroller {height: 100% !important;}
+.ͼwz .cm-scroller {height: 100% !important;}
+.ͼwy .cm-scroller {height: 100% !important;}
+.ͼwx .cm-scroller {height: 100% !important;}
+.ͼww .cm-scroller {height: 100% !important;}
+.ͼwv .cm-scroller {height: 100% !important;}
+.ͼwu .cm-scroller {height: 100% !important;}
+.ͼwt .cm-scroller {height: 100% !important;}
+.ͼws .cm-scroller {height: 100% !important;}
+.ͼwr .cm-scroller {height: 100% !important;}
+.ͼwq .cm-scroller {height: 100% !important;}
+.ͼwp .cm-scroller {height: 100% !important;}
+.ͼwo .cm-scroller {height: 100% !important;}
+.ͼwn .cm-scroller {height: 100% !important;}
+.ͼwm .cm-scroller {height: 100% !important;}
+.ͼwl .cm-scroller {height: 100% !important;}
+.ͼwk .cm-scroller {height: 100% !important;}
+.ͼwj .cm-scroller {height: 100% !important;}
+.ͼwi .cm-scroller {height: 100% !important;}
+.ͼwh .cm-scroller {height: 100% !important;}
+.ͼwg .cm-scroller {height: 100% !important;}
+.ͼwf .cm-scroller {height: 100% !important;}
+.ͼwe .cm-scroller {height: 100% !important;}
+.ͼwd .cm-scroller {height: 100% !important;}
+.ͼwc .cm-scroller {height: 100% !important;}
+.ͼwb .cm-scroller {height: 100% !important;}
+.ͼwa .cm-scroller {height: 100% !important;}
+.ͼw9 .cm-scroller {height: 100% !important;}
+.ͼw8 .cm-scroller {height: 100% !important;}
+.ͼw7 .cm-scroller {height: 100% !important;}
+.ͼw6 .cm-scroller {height: 100% !important;}
+.ͼw5 .cm-scroller {height: 100% !important;}
+.ͼw4 .cm-scroller {height: 100% !important;}
+.ͼw3 .cm-scroller {height: 100% !important;}
+.ͼw2 .cm-scroller {height: 100% !important;}
+.ͼw1 .cm-scroller {height: 100% !important;}
+.ͼw0 .cm-scroller {height: 100% !important;}
+.ͼvz .cm-scroller {height: 100% !important;}
+.ͼvy .cm-scroller {height: 100% !important;}
+.ͼvx .cm-scroller {height: 100% !important;}
+.ͼvw .cm-scroller {height: 100% !important;}
+.ͼvv .cm-scroller {height: 100% !important;}
+.ͼvu .cm-scroller {height: 100% !important;}
+.ͼvt .cm-scroller {height: 100% !important;}
+.ͼvs .cm-scroller {height: 100% !important;}
+.ͼvr .cm-scroller {height: 100% !important;}
+.ͼvq .cm-scroller {height: 100% !important;}
+.ͼvp .cm-scroller {height: 100% !important;}
+.ͼvo .cm-scroller {height: 100% !important;}
+.ͼvn .cm-scroller {height: 100% !important;}
+.ͼvm .cm-scroller {height: 100% !important;}
+.ͼvl .cm-scroller {height: 100% !important;}
+.ͼvk .cm-scroller {height: 100% !important;}
+.ͼvj .cm-scroller {height: 100% !important;}
+.ͼvi .cm-scroller {height: 100% !important;}
+.ͼvh .cm-scroller {height: 100% !important;}
+.ͼvg .cm-scroller {height: 100% !important;}
+.ͼvf .cm-scroller {height: 100% !important;}
+.ͼve .cm-scroller {height: 100% !important;}
+.ͼvd .cm-scroller {height: 100% !important;}
+.ͼvc .cm-scroller {height: 100% !important;}
+.ͼvb .cm-scroller {height: 100% !important;}
+.ͼva .cm-scroller {height: 100% !important;}
+.ͼv9 .cm-scroller {height: 100% !important;}
+.ͼv8 .cm-scroller {height: 100% !important;}
+.ͼv7 .cm-scroller {height: 100% !important;}
+.ͼv6 .cm-scroller {height: 100% !important;}
+.ͼv5 .cm-scroller {height: 100% !important;}
+.ͼv4 .cm-scroller {height: 100% !important;}
+.ͼv3 .cm-scroller {height: 100% !important;}
+.ͼv2 .cm-scroller {height: 100% !important;}
+.ͼv1 .cm-scroller {height: 100% !important;}
+.ͼv0 .cm-scroller {height: 100% !important;}
+.ͼuz .cm-scroller {height: 100% !important;}
+.ͼuy .cm-scroller {height: 100% !important;}
+.ͼux .cm-scroller {height: 100% !important;}
+.ͼuw .cm-scroller {height: 100% !important;}
+.ͼuv .cm-scroller {height: 100% !important;}
+.ͼuu .cm-scroller {height: 100% !important;}
+.ͼut .cm-scroller {height: 100% !important;}
+.ͼus .cm-scroller {height: 100% !important;}
+.ͼur .cm-scroller {height: 100% !important;}
+.ͼuq .cm-scroller {height: 100% !important;}
+.ͼup .cm-scroller {height: 100% !important;}
+.ͼuo .cm-scroller {height: 100% !important;}
+.ͼun .cm-scroller {height: 100% !important;}
+.ͼum .cm-scroller {height: 100% !important;}
+.ͼul .cm-scroller {height: 100% !important;}
+.ͼuk .cm-scroller {height: 100% !important;}
+.ͼuj .cm-scroller {height: 100% !important;}
+.ͼui .cm-scroller {height: 100% !important;}
+.ͼuh .cm-scroller {height: 100% !important;}
+.ͼug .cm-scroller {height: 100% !important;}
+.ͼuf .cm-scroller {height: 100% !important;}
+.ͼue .cm-scroller {height: 100% !important;}
+.ͼud .cm-scroller {height: 100% !important;}
+.ͼuc .cm-scroller {height: 100% !important;}
+.ͼub .cm-scroller {height: 100% !important;}
+.ͼua .cm-scroller {height: 100% !important;}
+.ͼu9 .cm-scroller {height: 100% !important;}
+.ͼu8 .cm-scroller {height: 100% !important;}
+.ͼu7 .cm-scroller {height: 100% !important;}
+.ͼu6 .cm-scroller {height: 100% !important;}
+.ͼu5 .cm-scroller {height: 100% !important;}
+.ͼu4 .cm-scroller {height: 100% !important;}
+.ͼu3 .cm-scroller {height: 100% !important;}
+.ͼu2 .cm-scroller {height: 100% !important;}
+.ͼu1 .cm-scroller {height: 100% !important;}
+.ͼu0 .cm-scroller {height: 100% !important;}
+.ͼtz .cm-scroller {height: 100% !important;}
+.ͼty .cm-scroller {height: 100% !important;}
+.ͼtx .cm-scroller {height: 100% !important;}
+.ͼtw .cm-scroller {height: 100% !important;}
+.ͼtv .cm-scroller {height: 100% !important;}
+.ͼtu .cm-scroller {height: 100% !important;}
+.ͼtt .cm-scroller {height: 100% !important;}
+.ͼts .cm-scroller {height: 100% !important;}
+.ͼtr .cm-scroller {height: 100% !important;}
+.ͼtq .cm-scroller {height: 100% !important;}
+.ͼtp .cm-scroller {height: 100% !important;}
+.ͼto .cm-scroller {height: 100% !important;}
+.ͼtn .cm-scroller {height: 100% !important;}
+.ͼtm .cm-scroller {height: 100% !important;}
+.ͼtl .cm-scroller {height: 100% !important;}
+.ͼtk .cm-scroller {height: 100% !important;}
+.ͼtj .cm-scroller {height: 100% !important;}
+.ͼti .cm-scroller {height: 100% !important;}
+.ͼth .cm-scroller {height: 100% !important;}
+.ͼtg .cm-scroller {height: 100% !important;}
+.ͼtf .cm-scroller {height: 100% !important;}
+.ͼte .cm-scroller {height: 100% !important;}
+.ͼtd .cm-scroller {height: 100% !important;}
+.ͼtc .cm-scroller {height: 100% !important;}
+.ͼtb .cm-scroller {height: 100% !important;}
+.ͼta .cm-scroller {height: 100% !important;}
+.ͼt9 .cm-scroller {height: 100% !important;}
+.ͼt8 .cm-scroller {height: 100% !important;}
+.ͼt7 .cm-scroller {height: 100% !important;}
+.ͼt6 .cm-scroller {height: 100% !important;}
+.ͼt5 .cm-scroller {height: 100% !important;}
+.ͼt4 .cm-scroller {height: 100% !important;}
+.ͼt3 .cm-scroller {height: 100% !important;}
+.ͼt2 .cm-scroller {height: 100% !important;}
+.ͼt1 .cm-scroller {height: 100% !important;}
+.ͼt0 .cm-scroller {height: 100% !important;}
+.ͼsz .cm-scroller {height: 100% !important;}
+.ͼsy .cm-scroller {height: 100% !important;}
+.ͼsx .cm-scroller {height: 100% !important;}
+.ͼsw .cm-scroller {height: 100% !important;}
+.ͼsv .cm-scroller {height: 100% !important;}
+.ͼsu .cm-scroller {height: 100% !important;}
+.ͼst .cm-scroller {height: 100% !important;}
+.ͼss .cm-scroller {height: 100% !important;}
+.ͼsr .cm-scroller {height: 100% !important;}
+.ͼsq .cm-scroller {height: 100% !important;}
+.ͼsp .cm-scroller {height: 100% !important;}
+.ͼso .cm-scroller {height: 100% !important;}
+.ͼsn .cm-scroller {height: 100% !important;}
+.ͼsm .cm-scroller {height: 100% !important;}
+.ͼsl .cm-scroller {height: 100% !important;}
+.ͼsk .cm-scroller {height: 100% !important;}
+.ͼsj .cm-scroller {height: 100% !important;}
+.ͼsi .cm-scroller {height: 100% !important;}
+.ͼsh .cm-scroller {height: 100% !important;}
+.ͼsg .cm-scroller {height: 100% !important;}
+.ͼsf .cm-scroller {height: 100% !important;}
+.ͼse .cm-scroller {height: 100% !important;}
+.ͼsd .cm-scroller {height: 100% !important;}
+.ͼsc .cm-scroller {height: 100% !important;}
+.ͼsb .cm-scroller {height: 100% !important;}
+.ͼsa .cm-scroller {height: 100% !important;}
+.ͼs9 .cm-scroller {height: 100% !important;}
+.ͼs8 .cm-scroller {height: 100% !important;}
+.ͼs7 .cm-scroller {height: 100% !important;}
+.ͼs6 .cm-scroller {height: 100% !important;}
+.ͼs5 .cm-scroller {height: 100% !important;}
+.ͼs4 .cm-scroller {height: 100% !important;}
+.ͼs3 .cm-scroller {height: 100% !important;}
+.ͼs2 .cm-scroller {height: 100% !important;}
+.ͼs1 .cm-scroller {height: 100% !important;}
+.ͼs0 .cm-scroller {height: 100% !important;}
+.ͼrz .cm-scroller {height: 100% !important;}
+.ͼry .cm-scroller {height: 100% !important;}
+.ͼrx .cm-scroller {height: 100% !important;}
+.ͼrw .cm-scroller {height: 100% !important;}
+.ͼrv .cm-scroller {height: 100% !important;}
+.ͼru .cm-scroller {height: 100% !important;}
+.ͼrt .cm-scroller {height: 100% !important;}
+.ͼrs .cm-scroller {height: 100% !important;}
+.ͼrr .cm-scroller {height: 100% !important;}
+.ͼrq .cm-scroller {height: 100% !important;}
+.ͼrp .cm-scroller {height: 100% !important;}
+.ͼro .cm-scroller {height: 100% !important;}
+.ͼrn .cm-scroller {height: 100% !important;}
+.ͼrm .cm-scroller {height: 100% !important;}
+.ͼrl .cm-scroller {height: 100% !important;}
+.ͼrk .cm-scroller {height: 100% !important;}
+.ͼrj .cm-scroller {height: 100% !important;}
+.ͼri .cm-scroller {height: 100% !important;}
+.ͼrh .cm-scroller {height: 100% !important;}
+.ͼrg .cm-scroller {height: 100% !important;}
+.ͼrf .cm-scroller {height: 100% !important;}
+.ͼre .cm-scroller {height: 100% !important;}
+.ͼrd .cm-scroller {height: 100% !important;}
+.ͼrc .cm-scroller {height: 100% !important;}
+.ͼrb .cm-scroller {height: 100% !important;}
+.ͼra .cm-scroller {height: 100% !important;}
+.ͼr9 .cm-scroller {height: 100% !important;}
+.ͼr8 .cm-scroller {height: 100% !important;}
+.ͼr7 .cm-scroller {height: 100% !important;}
+.ͼr6 .cm-scroller {height: 100% !important;}
+.ͼr5 .cm-scroller {height: 100% !important;}
+.ͼr4 .cm-scroller {height: 100% !important;}
+.ͼr3 .cm-scroller {height: 100% !important;}
+.ͼr2 .cm-scroller {height: 100% !important;}
+.ͼr1 .cm-scroller {height: 100% !important;}
+.ͼr0 .cm-scroller {height: 100% !important;}
+.ͼqz .cm-scroller {height: 100% !important;}
+.ͼqy .cm-scroller {height: 100% !important;}
+.ͼqx .cm-scroller {height: 100% !important;}
+.ͼqw .cm-scroller {height: 100% !important;}
+.ͼqv .cm-scroller {height: 100% !important;}
+.ͼqu .cm-scroller {height: 100% !important;}
+.ͼqt .cm-scroller {height: 100% !important;}
+.ͼqs .cm-scroller {height: 100% !important;}
+.ͼqr .cm-scroller {height: 100% !important;}
+.ͼqq .cm-scroller {height: 100% !important;}
+.ͼqp .cm-scroller {height: 100% !important;}
+.ͼqo .cm-scroller {height: 100% !important;}
+.ͼqn .cm-scroller {height: 100% !important;}
+.ͼqm .cm-scroller {height: 100% !important;}
+.ͼql .cm-scroller {height: 100% !important;}
+.ͼqk .cm-scroller {height: 100% !important;}
+.ͼqj .cm-scroller {height: 100% !important;}
+.ͼqi .cm-scroller {height: 100% !important;}
+.ͼqh .cm-scroller {height: 100% !important;}
+.ͼqg .cm-scroller {height: 100% !important;}
+.ͼqf .cm-scroller {height: 100% !important;}
+.ͼqe .cm-scroller {height: 100% !important;}
+.ͼqd .cm-scroller {height: 100% !important;}
+.ͼqc .cm-scroller {height: 100% !important;}
+.ͼqb .cm-scroller {height: 100% !important;}
+.ͼqa .cm-scroller {height: 100% !important;}
+.ͼq9 .cm-scroller {height: 100% !important;}
+.ͼq8 .cm-scroller {height: 100% !important;}
+.ͼq7 .cm-scroller {height: 100% !important;}
+.ͼq6 .cm-scroller {height: 100% !important;}
+.ͼq5 .cm-scroller {height: 100% !important;}
+.ͼq4 .cm-scroller {height: 100% !important;}
+.ͼq3 .cm-scroller {height: 100% !important;}
+.ͼq2 .cm-scroller {height: 100% !important;}
+.ͼq1 .cm-scroller {height: 100% !important;}
+.ͼq0 .cm-scroller {height: 100% !important;}
+.ͼpz .cm-scroller {height: 100% !important;}
+.ͼpy .cm-scroller {height: 100% !important;}
+.ͼpx .cm-scroller {height: 100% !important;}
+.ͼpw .cm-scroller {height: 100% !important;}
+.ͼpv .cm-scroller {height: 100% !important;}
+.ͼpu .cm-scroller {height: 100% !important;}
+.ͼpt .cm-scroller {height: 100% !important;}
+.ͼps .cm-scroller {height: 100% !important;}
+.ͼpr .cm-scroller {height: 100% !important;}
+.ͼpq .cm-scroller {height: 100% !important;}
+.ͼpp .cm-scroller {height: 100% !important;}
+.ͼpo .cm-scroller {height: 100% !important;}
+.ͼpn .cm-scroller {height: 100% !important;}
+.ͼpm .cm-scroller {height: 100% !important;}
+.ͼpl .cm-scroller {height: 100% !important;}
+.ͼpk .cm-scroller {height: 100% !important;}
+.ͼpj .cm-scroller {height: 100% !important;}
+.ͼpi .cm-scroller {height: 100% !important;}
+.ͼph .cm-scroller {height: 100% !important;}
+.ͼpg .cm-scroller {height: 100% !important;}
+.ͼpf .cm-scroller {height: 100% !important;}
+.ͼpe .cm-scroller {height: 100% !important;}
+.ͼpd .cm-scroller {height: 100% !important;}
+.ͼpc .cm-scroller {height: 100% !important;}
+.ͼpb .cm-scroller {height: 100% !important;}
+.ͼpa .cm-scroller {height: 100% !important;}
+.ͼp9 .cm-scroller {height: 100% !important;}
+.ͼp8 .cm-scroller {height: 100% !important;}
+.ͼp7 .cm-scroller {height: 100% !important;}
+.ͼp6 .cm-scroller {height: 100% !important;}
+.ͼp5 .cm-scroller {height: 100% !important;}
+.ͼp4 .cm-scroller {height: 100% !important;}
+.ͼp3 .cm-scroller {height: 100% !important;}
+.ͼp2 .cm-scroller {height: 100% !important;}
+.ͼp1 .cm-scroller {height: 100% !important;}
+.ͼp0 .cm-scroller {height: 100% !important;}
+.ͼoz .cm-scroller {height: 100% !important;}
+.ͼoy .cm-scroller {height: 100% !important;}
+.ͼox .cm-scroller {height: 100% !important;}
+.ͼow .cm-scroller {height: 100% !important;}
+.ͼov .cm-scroller {height: 100% !important;}
+.ͼou .cm-scroller {height: 100% !important;}
+.ͼot .cm-scroller {height: 100% !important;}
+.ͼos .cm-scroller {height: 100% !important;}
+.ͼor .cm-scroller {height: 100% !important;}
+.ͼoq .cm-scroller {height: 100% !important;}
+.ͼop .cm-scroller {height: 100% !important;}
+.ͼoo .cm-scroller {height: 100% !important;}
+.ͼon .cm-scroller {height: 100% !important;}
+.ͼom .cm-scroller {height: 100% !important;}
+.ͼol .cm-scroller {height: 100% !important;}
+.ͼok .cm-scroller {height: 100% !important;}
+.ͼoj .cm-scroller {height: 100% !important;}
+.ͼoi .cm-scroller {height: 100% !important;}
+.ͼoh .cm-scroller {height: 100% !important;}
+.ͼog .cm-scroller {height: 100% !important;}
+.ͼof .cm-scroller {height: 100% !important;}
+.ͼoe .cm-scroller {height: 100% !important;}
+.ͼod .cm-scroller {height: 100% !important;}
+.ͼoc .cm-scroller {height: 100% !important;}
+.ͼob .cm-scroller {height: 100% !important;}
+.ͼoa .cm-scroller {height: 100% !important;}
+.ͼo9 .cm-scroller {height: 100% !important;}
+.ͼo8 .cm-scroller {height: 100% !important;}
+.ͼo7 .cm-scroller {height: 100% !important;}
+.ͼo6 .cm-scroller {height: 100% !important;}
+.ͼo5 .cm-scroller {height: 100% !important;}
+.ͼo4 .cm-scroller {height: 100% !important;}
+.ͼo3 .cm-scroller {height: 100% !important;}
+.ͼo2 .cm-scroller {height: 100% !important;}
+.ͼo1 .cm-scroller {height: 100% !important;}
+.ͼo0 .cm-scroller {height: 100% !important;}
+.ͼnz .cm-scroller {height: 100% !important;}
+.ͼny .cm-scroller {height: 100% !important;}
+.ͼnx .cm-scroller {height: 100% !important;}
+.ͼnw .cm-scroller {height: 100% !important;}
+.ͼnv .cm-scroller {height: 100% !important;}
+.ͼnu .cm-scroller {height: 100% !important;}
+.ͼnt .cm-scroller {height: 100% !important;}
+.ͼns .cm-scroller {height: 100% !important;}
+.ͼnr .cm-scroller {height: 100% !important;}
+.ͼnq .cm-scroller {height: 100% !important;}
+.ͼnp .cm-scroller {height: 100% !important;}
+.ͼno .cm-scroller {height: 100% !important;}
+.ͼnn .cm-scroller {height: 100% !important;}
+.ͼnm .cm-scroller {height: 100% !important;}
+.ͼnl .cm-scroller {height: 100% !important;}
+.ͼnk .cm-scroller {height: 100% !important;}
+.ͼnj .cm-scroller {height: 100% !important;}
+.ͼni .cm-scroller {height: 100% !important;}
+.ͼnh .cm-scroller {height: 100% !important;}
+.ͼng .cm-scroller {height: 100% !important;}
+.ͼnf .cm-scroller {height: 100% !important;}
+.ͼne .cm-scroller {height: 100% !important;}
+.ͼnd .cm-scroller {height: 100% !important;}
+.ͼnc .cm-scroller {height: 100% !important;}
+.ͼnb .cm-scroller {height: 100% !important;}
+.ͼna .cm-scroller {height: 100% !important;}
+.ͼn9 .cm-scroller {height: 100% !important;}
+.ͼn8 .cm-scroller {height: 100% !important;}
+.ͼn7 .cm-scroller {height: 100% !important;}
+.ͼn6 .cm-scroller {height: 100% !important;}
+.ͼn5 .cm-scroller {height: 100% !important;}
+.ͼn4 .cm-scroller {height: 100% !important;}
+.ͼn3 .cm-scroller {height: 100% !important;}
+.ͼn2 .cm-scroller {height: 100% !important;}
+.ͼn1 .cm-scroller {height: 100% !important;}
+.ͼn0 .cm-scroller {height: 100% !important;}
+.ͼmz .cm-scroller {height: 100% !important;}
+.ͼmy .cm-scroller {height: 100% !important;}
+.ͼmx .cm-scroller {height: 100% !important;}
+.ͼmw .cm-scroller {height: 100% !important;}
+.ͼmv .cm-scroller {height: 100% !important;}
+.ͼmu .cm-scroller {height: 100% !important;}
+.ͼmt .cm-scroller {height: 100% !important;}
+.ͼms .cm-scroller {height: 100% !important;}
+.ͼmr .cm-scroller {height: 100% !important;}
+.ͼmq .cm-scroller {height: 100% !important;}
+.ͼmp .cm-scroller {height: 100% !important;}
+.ͼmo .cm-scroller {height: 100% !important;}
+.ͼmn .cm-scroller {height: 100% !important;}
+.ͼmm .cm-scroller {height: 100% !important;}
+.ͼml .cm-scroller {height: 100% !important;}
+.ͼmk .cm-scroller {height: 100% !important;}
+.ͼmj .cm-scroller {height: 100% !important;}
+.ͼmi .cm-scroller {height: 100% !important;}
+.ͼmh .cm-scroller {height: 100% !important;}
+.ͼmg .cm-scroller {height: 100% !important;}
+.ͼmf .cm-scroller {height: 100% !important;}
+.ͼme .cm-scroller {height: 100% !important;}
+.ͼmd .cm-scroller {height: 100% !important;}
+.ͼmc .cm-scroller {height: 100% !important;}
+.ͼmb .cm-scroller {height: 100% !important;}
+.ͼma .cm-scroller {height: 100% !important;}
+.ͼm9 .cm-scroller {height: 100% !important;}
+.ͼm8 .cm-scroller {height: 100% !important;}
+.ͼm7 .cm-scroller {height: 100% !important;}
+.ͼm6 .cm-scroller {height: 100% !important;}
+.ͼm5 .cm-scroller {height: 100% !important;}
+.ͼm4 .cm-scroller {height: 100% !important;}
+.ͼm3 .cm-scroller {height: 100% !important;}
+.ͼm2 .cm-scroller {height: 100% !important;}
+.ͼm1 .cm-scroller {height: 100% !important;}
+.ͼm0 .cm-scroller {height: 100% !important;}
+.ͼlz .cm-scroller {height: 100% !important;}
+.ͼly .cm-scroller {height: 100% !important;}
+.ͼlx .cm-scroller {height: 100% !important;}
+.ͼlw .cm-scroller {height: 100% !important;}
+.ͼlv .cm-scroller {height: 100% !important;}
+.ͼlu .cm-scroller {height: 100% !important;}
+.ͼlt .cm-scroller {height: 100% !important;}
+.ͼls .cm-scroller {height: 100% !important;}
+.ͼlr .cm-scroller {height: 100% !important;}
+.ͼlq .cm-scroller {height: 100% !important;}
+.ͼlp .cm-scroller {height: 100% !important;}
+.ͼlo .cm-scroller {height: 100% !important;}
+.ͼln .cm-scroller {height: 100% !important;}
+.ͼlm .cm-scroller {height: 100% !important;}
+.ͼll .cm-scroller {height: 100% !important;}
+.ͼlk .cm-scroller {height: 100% !important;}
+.ͼlj .cm-scroller {height: 100% !important;}
+.ͼli .cm-scroller {height: 100% !important;}
+.ͼlh .cm-scroller {height: 100% !important;}
+.ͼlg .cm-scroller {height: 100% !important;}
+.ͼlf .cm-scroller {height: 100% !important;}
+.ͼle .cm-scroller {height: 100% !important;}
+.ͼld .cm-scroller {height: 100% !important;}
+.ͼlc .cm-scroller {height: 100% !important;}
+.ͼlb .cm-scroller {height: 100% !important;}
+.ͼla .cm-scroller {height: 100% !important;}
+.ͼl9 .cm-scroller {height: 100% !important;}
+.ͼl8 .cm-scroller {height: 100% !important;}
+.ͼl7 .cm-scroller {height: 100% !important;}
+.ͼl6 .cm-scroller {height: 100% !important;}
+.ͼl5 .cm-scroller {height: 100% !important;}
+.ͼl4 .cm-scroller {height: 100% !important;}
+.ͼl3 .cm-scroller {height: 100% !important;}
+.ͼl2 .cm-scroller {height: 100% !important;}
+.ͼl1 .cm-scroller {height: 100% !important;}
+.ͼl0 .cm-scroller {height: 100% !important;}
+.ͼkz .cm-scroller {height: 100% !important;}
+.ͼky .cm-scroller {height: 100% !important;}
+.ͼkx .cm-scroller {height: 100% !important;}
+.ͼkw .cm-scroller {height: 100% !important;}
+.ͼkv .cm-scroller {height: 100% !important;}
+.ͼku .cm-scroller {height: 100% !important;}
+.ͼkt .cm-scroller {height: 100% !important;}
+.ͼks .cm-scroller {height: 100% !important;}
+.ͼkr .cm-scroller {height: 100% !important;}
+.ͼkq .cm-scroller {height: 100% !important;}
+.ͼkp .cm-scroller {height: 100% !important;}
+.ͼko .cm-scroller {height: 100% !important;}
+.ͼkn .cm-scroller {height: 100% !important;}
+.ͼkm .cm-scroller {height: 100% !important;}
+.ͼkl .cm-scroller {height: 100% !important;}
+.ͼkk .cm-scroller {height: 100% !important;}
+.ͼkj .cm-scroller {height: 100% !important;}
+.ͼki .cm-scroller {height: 100% !important;}
+.ͼkh .cm-scroller {height: 100% !important;}
+.ͼkg .cm-scroller {height: 100% !important;}
+.ͼkf .cm-scroller {height: 100% !important;}
+.ͼke .cm-scroller {height: 100% !important;}
+.ͼkd .cm-scroller {height: 100% !important;}
+.ͼkc .cm-scroller {height: 100% !important;}
+.ͼkb .cm-scroller {height: 100% !important;}
+.ͼka .cm-scroller {height: 100% !important;}
+.ͼk9 .cm-scroller {height: 100% !important;}
+.ͼk8 .cm-scroller {height: 100% !important;}
+.ͼk7 .cm-scroller {height: 100% !important;}
+.ͼk6 .cm-scroller {height: 100% !important;}
+.ͼk5 .cm-scroller {height: 100% !important;}
+.ͼk4 .cm-scroller {height: 100% !important;}
+.ͼk3 .cm-scroller {height: 100% !important;}
+.ͼk2 .cm-scroller {height: 100% !important;}
+.ͼk1 .cm-scroller {height: 100% !important;}
+.ͼk0 .cm-scroller {height: 100% !important;}
+.ͼjz .cm-scroller {height: 100% !important;}
+.ͼjy .cm-scroller {height: 100% !important;}
+.ͼjx .cm-scroller {height: 100% !important;}
+.ͼjw .cm-scroller {height: 100% !important;}
+.ͼjv .cm-scroller {height: 100% !important;}
+.ͼju .cm-scroller {height: 100% !important;}
+.ͼjt .cm-scroller {height: 100% !important;}
+.ͼjs .cm-scroller {height: 100% !important;}
+.ͼjr .cm-scroller {height: 100% !important;}
+.ͼjq .cm-scroller {height: 100% !important;}
+.ͼjp .cm-scroller {height: 100% !important;}
+.ͼjo .cm-scroller {height: 100% !important;}
+.ͼjn .cm-scroller {height: 100% !important;}
+.ͼjm .cm-scroller {height: 100% !important;}
+.ͼjl .cm-scroller {height: 100% !important;}
+.ͼjk .cm-scroller {height: 100% !important;}
+.ͼjj .cm-scroller {height: 100% !important;}
+.ͼji .cm-scroller {height: 100% !important;}
+.ͼjh .cm-scroller {height: 100% !important;}
+.ͼjg .cm-scroller {height: 100% !important;}
+.ͼjf .cm-scroller {height: 100% !important;}
+.ͼje .cm-scroller {height: 100% !important;}
+.ͼjd .cm-scroller {height: 100% !important;}
+.ͼjc .cm-scroller {height: 100% !important;}
+.ͼjb .cm-scroller {height: 100% !important;}
+.ͼja .cm-scroller {height: 100% !important;}
+.ͼj9 .cm-scroller {height: 100% !important;}
+.ͼj8 .cm-scroller {height: 100% !important;}
+.ͼj7 .cm-scroller {height: 100% !important;}
+.ͼj6 .cm-scroller {height: 100% !important;}
+.ͼj5 .cm-scroller {height: 100% !important;}
+.ͼj4 .cm-scroller {height: 100% !important;}
+.ͼj3 .cm-scroller {height: 100% !important;}
+.ͼj2 .cm-scroller {height: 100% !important;}
+.ͼj1 .cm-scroller {height: 100% !important;}
+.ͼj0 .cm-scroller {height: 100% !important;}
+.ͼiz .cm-scroller {height: 100% !important;}
+.ͼiy .cm-scroller {height: 100% !important;}
+.ͼix .cm-scroller {height: 100% !important;}
+.ͼiw .cm-scroller {height: 100% !important;}
+.ͼiv .cm-scroller {height: 100% !important;}
+.ͼiu .cm-scroller {height: 100% !important;}
+.ͼit .cm-scroller {height: 100% !important;}
+.ͼis .cm-scroller {height: 100% !important;}
+.ͼir .cm-scroller {height: 100% !important;}
+.ͼiq .cm-scroller {height: 100% !important;}
+.ͼip .cm-scroller {height: 100% !important;}
+.ͼio .cm-scroller {height: 100% !important;}
+.ͼin .cm-scroller {height: 100% !important;}
+.ͼim .cm-scroller {height: 100% !important;}
+.ͼil .cm-scroller {height: 100% !important;}
+.ͼik .cm-scroller {height: 100% !important;}
+.ͼij .cm-scroller {height: 100% !important;}
+.ͼii .cm-scroller {height: 100% !important;}
+.ͼih .cm-scroller {height: 100% !important;}
+.ͼig .cm-scroller {height: 100% !important;}
+.ͼif .cm-scroller {height: 100% !important;}
+.ͼie .cm-scroller {height: 100% !important;}
+.ͼid .cm-scroller {height: 100% !important;}
+.ͼic .cm-scroller {height: 100% !important;}
+.ͼib .cm-scroller {height: 100% !important;}
+.ͼia .cm-scroller {height: 100% !important;}
+.ͼi9 .cm-scroller {height: 100% !important;}
+.ͼi8 .cm-scroller {height: 100% !important;}
+.ͼi7 .cm-scroller {height: 100% !important;}
+.ͼi6 .cm-scroller {height: 100% !important;}
+.ͼi5 .cm-scroller {height: 100% !important;}
+.ͼi4 .cm-scroller {height: 100% !important;}
+.ͼi3 .cm-scroller {height: 100% !important;}
+.ͼi2 .cm-scroller {height: 100% !important;}
+.ͼi1 .cm-scroller {height: 100% !important;}
+.ͼi0 .cm-scroller {height: 100% !important;}
+.ͼhz .cm-scroller {height: 100% !important;}
+.ͼhy .cm-scroller {height: 100% !important;}
+.ͼhx .cm-scroller {height: 100% !important;}
+.ͼhw .cm-scroller {height: 100% !important;}
+.ͼhv .cm-scroller {height: 100% !important;}
+.ͼhu .cm-scroller {height: 100% !important;}
+.ͼht .cm-scroller {height: 100% !important;}
+.ͼhs .cm-scroller {height: 100% !important;}
+.ͼhr .cm-scroller {height: 100% !important;}
+.ͼhq .cm-scroller {height: 100% !important;}
+.ͼhp .cm-scroller {height: 100% !important;}
+.ͼho .cm-scroller {height: 100% !important;}
+.ͼhn .cm-scroller {height: 100% !important;}
+.ͼhm .cm-scroller {height: 100% !important;}
+.ͼhl .cm-scroller {height: 100% !important;}
+.ͼhk .cm-scroller {height: 100% !important;}
+.ͼhj .cm-scroller {height: 100% !important;}
+.ͼhi .cm-scroller {height: 100% !important;}
+.ͼhh .cm-scroller {height: 100% !important;}
+.ͼhg .cm-scroller {height: 100% !important;}
+.ͼhf .cm-scroller {height: 100% !important;}
+.ͼhe .cm-scroller {height: 100% !important;}
+.ͼhd .cm-scroller {height: 100% !important;}
+.ͼhc .cm-scroller {height: 100% !important;}
+.ͼhb .cm-scroller {height: 100% !important;}
+.ͼha .cm-scroller {height: 100% !important;}
+.ͼh9 .cm-scroller {height: 100% !important;}
+.ͼh8 .cm-scroller {height: 100% !important;}
+.ͼh7 .cm-scroller {height: 100% !important;}
+.ͼh6 .cm-scroller {height: 100% !important;}
+.ͼh5 .cm-scroller {height: 100% !important;}
+.ͼh4 .cm-scroller {height: 100% !important;}
+.ͼh3 .cm-scroller {height: 100% !important;}
+.ͼh2 .cm-scroller {height: 100% !important;}
+.ͼh1 .cm-scroller {height: 100% !important;}
+.ͼh0 .cm-scroller {height: 100% !important;}
+.ͼgz .cm-scroller {height: 100% !important;}
+.ͼgy .cm-scroller {height: 100% !important;}
+.ͼgx .cm-scroller {height: 100% !important;}
+.ͼgw .cm-scroller {height: 100% !important;}
+.ͼgv .cm-scroller {height: 100% !important;}
+.ͼgu .cm-scroller {height: 100% !important;}
+.ͼgt .cm-scroller {height: 100% !important;}
+.ͼgs .cm-scroller {height: 100% !important;}
+.ͼgr .cm-scroller {height: 100% !important;}
+.ͼgq .cm-scroller {height: 100% !important;}
+.ͼgp .cm-scroller {height: 100% !important;}
+.ͼgo .cm-scroller {height: 100% !important;}
+.ͼgn .cm-scroller {height: 100% !important;}
+.ͼgm .cm-scroller {height: 100% !important;}
+.ͼgl .cm-scroller {height: 100% !important;}
+.ͼgk .cm-scroller {height: 100% !important;}
+.ͼgj .cm-scroller {height: 100% !important;}
+.ͼgi .cm-scroller {height: 100% !important;}
+.ͼgh .cm-scroller {height: 100% !important;}
+.ͼgg .cm-scroller {height: 100% !important;}
+.ͼgf .cm-scroller {height: 100% !important;}
+.ͼge .cm-scroller {height: 100% !important;}
+.ͼgd .cm-scroller {height: 100% !important;}
+.ͼgc .cm-scroller {height: 100% !important;}
+.ͼgb .cm-scroller {height: 100% !important;}
+.ͼga .cm-scroller {height: 100% !important;}
+.ͼg9 .cm-scroller {height: 100% !important;}
+.ͼg8 .cm-scroller {height: 100% !important;}
+.ͼg7 .cm-scroller {height: 100% !important;}
+.ͼg6 .cm-scroller {height: 100% !important;}
+.ͼg5 .cm-scroller {height: 100% !important;}
+.ͼg4 .cm-scroller {height: 100% !important;}
+.ͼg3 .cm-scroller {height: 100% !important;}
+.ͼg2 .cm-scroller {height: 100% !important;}
+.ͼg1 .cm-scroller {height: 100% !important;}
+.ͼg0 .cm-scroller {height: 100% !important;}
+.ͼfz .cm-scroller {height: 100% !important;}
+.ͼfy .cm-scroller {height: 100% !important;}
+.ͼfx .cm-scroller {height: 100% !important;}
+.ͼfw .cm-scroller {height: 100% !important;}
+.ͼfv .cm-scroller {height: 100% !important;}
+.ͼfu .cm-scroller {height: 100% !important;}
+.ͼft .cm-scroller {height: 100% !important;}
+.ͼfs .cm-scroller {height: 100% !important;}
+.ͼfr .cm-scroller {height: 100% !important;}
+.ͼfq .cm-scroller {height: 100% !important;}
+.ͼfp .cm-scroller {height: 100% !important;}
+.ͼfo .cm-scroller {height: 100% !important;}
+.ͼfn .cm-scroller {height: 100% !important;}
+.ͼfm .cm-scroller {height: 100% !important;}
+.ͼfl .cm-scroller {height: 100% !important;}
+.ͼfk .cm-scroller {height: 100% !important;}
+.ͼfj .cm-scroller {height: 100% !important;}
+.ͼfi .cm-scroller {height: 100% !important;}
+.ͼfh .cm-scroller {height: 100% !important;}
+.ͼfg .cm-scroller {height: 100% !important;}
+.ͼff .cm-scroller {height: 100% !important;}
+.ͼfe .cm-scroller {height: 100% !important;}
+.ͼfd .cm-scroller {height: 100% !important;}
+.ͼfc .cm-scroller {height: 100% !important;}
+.ͼfb .cm-scroller {height: 100% !important;}
+.ͼfa .cm-scroller {height: 100% !important;}
+.ͼf9 .cm-scroller {height: 100% !important;}
+.ͼf8 .cm-scroller {height: 100% !important;}
+.ͼf7 .cm-scroller {height: 100% !important;}
+.ͼf6 .cm-scroller {height: 100% !important;}
+.ͼf5 .cm-scroller {height: 100% !important;}
+.ͼf4 .cm-scroller {height: 100% !important;}
+.ͼf3 .cm-scroller {height: 100% !important;}
+.ͼf2 .cm-scroller {height: 100% !important;}
+.ͼf1 .cm-scroller {height: 100% !important;}
+.ͼf0 .cm-scroller {height: 100% !important;}
+.ͼez .cm-scroller {height: 100% !important;}
+.ͼey .cm-scroller {height: 100% !important;}
+.ͼex .cm-scroller {height: 100% !important;}
+.ͼew .cm-scroller {height: 100% !important;}
+.ͼev .cm-scroller {height: 100% !important;}
+.ͼeu .cm-scroller {height: 100% !important;}
+.ͼet .cm-scroller {height: 100% !important;}
+.ͼes .cm-scroller {height: 100% !important;}
+.ͼer .cm-scroller {height: 100% !important;}
+.ͼeq .cm-scroller {height: 100% !important;}
+.ͼep .cm-scroller {height: 100% !important;}
+.ͼeo .cm-scroller {height: 100% !important;}
+.ͼen .cm-scroller {height: 100% !important;}
+.ͼem .cm-scroller {height: 100% !important;}
+.ͼel .cm-scroller {height: 100% !important;}
+.ͼek .cm-scroller {height: 100% !important;}
+.ͼej .cm-scroller {height: 100% !important;}
+.ͼei .cm-scroller {height: 100% !important;}
+.ͼeh .cm-scroller {height: 100% !important;}
+.ͼeg .cm-scroller {height: 100% !important;}
+.ͼef .cm-scroller {height: 100% !important;}
+.ͼee .cm-scroller {height: 100% !important;}
+.ͼed .cm-scroller {height: 100% !important;}
+.ͼec .cm-scroller {height: 100% !important;}
+.ͼeb .cm-scroller {height: 100% !important;}
+.ͼea .cm-scroller {height: 100% !important;}
+.ͼe9 .cm-scroller {height: 100% !important;}
+.ͼe8 .cm-scroller {height: 100% !important;}
+.ͼe7 .cm-scroller {height: 100% !important;}
+.ͼe6 .cm-scroller {height: 100% !important;}
+.ͼe5 .cm-scroller {height: 100% !important;}
+.ͼe4 .cm-scroller {height: 100% !important;}
+.ͼe3 .cm-scroller {height: 100% !important;}
+.ͼe2 .cm-scroller {height: 100% !important;}
+.ͼe1 .cm-scroller {height: 100% !important;}
+.ͼe0 .cm-scroller {height: 100% !important;}
+.ͼdz .cm-scroller {height: 100% !important;}
+.ͼdy .cm-scroller {height: 100% !important;}
+.ͼdx .cm-scroller {height: 100% !important;}
+.ͼdw .cm-scroller {height: 100% !important;}
+.ͼdv .cm-scroller {height: 100% !important;}
+.ͼdu .cm-scroller {height: 100% !important;}
+.ͼdt .cm-scroller {height: 100% !important;}
+.ͼds .cm-scroller {height: 100% !important;}
+.ͼdr .cm-scroller {height: 100% !important;}
+.ͼdq .cm-scroller {height: 100% !important;}
+.ͼdp .cm-scroller {height: 100% !important;}
+.ͼdo .cm-scroller {height: 100% !important;}
+.ͼdn .cm-scroller {height: 100% !important;}
+.ͼdm .cm-scroller {height: 100% !important;}
+.ͼdl .cm-scroller {height: 100% !important;}
+.ͼdk .cm-scroller {height: 100% !important;}
+.ͼdj .cm-scroller {height: 100% !important;}
+.ͼdi .cm-scroller {height: 100% !important;}
+.ͼdh .cm-scroller {height: 100% !important;}
+.ͼdg .cm-scroller {height: 100% !important;}
+.ͼdf .cm-scroller {height: 100% !important;}
+.ͼde .cm-scroller {height: 100% !important;}
+.ͼdd .cm-scroller {height: 100% !important;}
+.ͼdc .cm-scroller {height: 100% !important;}
+.ͼdb .cm-scroller {height: 100% !important;}
+.ͼda .cm-scroller {height: 100% !important;}
+.ͼd9 .cm-scroller {height: 100% !important;}
+.ͼd8 .cm-scroller {height: 100% !important;}
+.ͼd7 .cm-scroller {height: 100% !important;}
+.ͼd6 .cm-scroller {height: 100% !important;}
+.ͼd5 .cm-scroller {height: 100% !important;}
+.ͼd4 .cm-scroller {height: 100% !important;}
+.ͼd3 .cm-scroller {height: 100% !important;}
+.ͼd2 .cm-scroller {height: 100% !important;}
+.ͼd1 .cm-scroller {height: 100% !important;}
+.ͼd0 .cm-scroller {height: 100% !important;}
+.ͼcz .cm-scroller {height: 100% !important;}
+.ͼcy .cm-scroller {height: 100% !important;}
+.ͼcx .cm-scroller {height: 100% !important;}
+.ͼcw .cm-scroller {height: 100% !important;}
+.ͼcv .cm-scroller {height: 100% !important;}
+.ͼcu .cm-scroller {height: 100% !important;}
+.ͼct .cm-scroller {height: 100% !important;}
+.ͼcs .cm-scroller {height: 100% !important;}
+.ͼcr .cm-scroller {height: 100% !important;}
+.ͼcq .cm-scroller {height: 100% !important;}
+.ͼcp .cm-scroller {height: 100% !important;}
+.ͼco .cm-scroller {height: 100% !important;}
+.ͼcn .cm-scroller {height: 100% !important;}
+.ͼcm .cm-scroller {height: 100% !important;}
+.ͼcl .cm-scroller {height: 100% !important;}
+.ͼck .cm-scroller {height: 100% !important;}
+.ͼcj .cm-scroller {height: 100% !important;}
+.ͼci .cm-scroller {height: 100% !important;}
+.ͼch .cm-scroller {height: 100% !important;}
+.ͼcg .cm-scroller {height: 100% !important;}
+.ͼcf .cm-scroller {height: 100% !important;}
+.ͼce .cm-scroller {height: 100% !important;}
+.ͼcd .cm-scroller {height: 100% !important;}
+.ͼcc .cm-scroller {height: 100% !important;}
+.ͼcb .cm-scroller {height: 100% !important;}
+.ͼca .cm-scroller {height: 100% !important;}
+.ͼc9 .cm-scroller {height: 100% !important;}
+.ͼc8 .cm-scroller {height: 100% !important;}
+.ͼc7 .cm-scroller {height: 100% !important;}
+.ͼc6 .cm-scroller {height: 100% !important;}
+.ͼc5 .cm-scroller {height: 100% !important;}
+.ͼc4 .cm-scroller {height: 100% !important;}
+.ͼc3 .cm-scroller {height: 100% !important;}
+.ͼc2 .cm-scroller {height: 100% !important;}
+.ͼc1 .cm-scroller {height: 100% !important;}
+.ͼc0 .cm-scroller {height: 100% !important;}
+.ͼbz .cm-scroller {height: 100% !important;}
+.ͼby .cm-scroller {height: 100% !important;}
+.ͼbx .cm-scroller {height: 100% !important;}
+.ͼbw .cm-scroller {height: 100% !important;}
+.ͼbv .cm-scroller {height: 100% !important;}
+.ͼbu .cm-scroller {height: 100% !important;}
+.ͼbt .cm-scroller {height: 100% !important;}
+.ͼbs .cm-scroller {height: 100% !important;}
+.ͼbr .cm-scroller {height: 100% !important;}
+.ͼbq .cm-scroller {height: 100% !important;}
+.ͼbp .cm-scroller {height: 100% !important;}
+.ͼbo .cm-scroller {height: 100% !important;}
+.ͼbn .cm-scroller {height: 100% !important;}
+.ͼbm .cm-scroller {height: 100% !important;}
+.ͼbl .cm-scroller {height: 100% !important;}
+.ͼbk .cm-scroller {height: 100% !important;}
+.ͼbj .cm-scroller {height: 100% !important;}
+.ͼbi .cm-scroller {height: 100% !important;}
+.ͼbh .cm-scroller {height: 100% !important;}
+.ͼbg .cm-scroller {height: 100% !important;}
+.ͼbf .cm-scroller {height: 100% !important;}
+.ͼbe .cm-scroller {height: 100% !important;}
+.ͼbd .cm-scroller {height: 100% !important;}
+.ͼbc .cm-scroller {height: 100% !important;}
+.ͼbb .cm-scroller {height: 100% !important;}
+.ͼba .cm-scroller {height: 100% !important;}
+.ͼb9 .cm-scroller {height: 100% !important;}
+.ͼb8 .cm-scroller {height: 100% !important;}
+.ͼb7 .cm-scroller {height: 100% !important;}
+.ͼb6 .cm-scroller {height: 100% !important;}
+.ͼb5 .cm-scroller {height: 100% !important;}
+.ͼb4 .cm-scroller {height: 100% !important;}
+.ͼb3 .cm-scroller {height: 100% !important;}
+.ͼb2 .cm-scroller {height: 100% !important;}
+.ͼb1 .cm-scroller {height: 100% !important;}
+.ͼb0 .cm-scroller {height: 100% !important;}
+.ͼaz .cm-scroller {height: 100% !important;}
+.ͼay .cm-scroller {height: 100% !important;}
+.ͼax .cm-scroller {height: 100% !important;}
+.ͼaw .cm-scroller {height: 100% !important;}
+.ͼav .cm-scroller {height: 100% !important;}
+.ͼau .cm-scroller {height: 100% !important;}
+.ͼat .cm-scroller {height: 100% !important;}
+.ͼas .cm-scroller {height: 100% !important;}
+.ͼar .cm-scroller {height: 100% !important;}
+.ͼaq .cm-scroller {height: 100% !important;}
+.ͼap .cm-scroller {height: 100% !important;}
+.ͼao .cm-scroller {height: 100% !important;}
+.ͼan .cm-scroller {height: 100% !important;}
+.ͼam .cm-scroller {height: 100% !important;}
+.ͼal .cm-scroller {height: 100% !important;}
+.ͼak .cm-scroller {height: 100% !important;}
+.ͼaj .cm-scroller {height: 100% !important;}
+.ͼai .cm-scroller {height: 100% !important;}
+.ͼah .cm-scroller {height: 100% !important;}
+.ͼag .cm-scroller {height: 100% !important;}
+.ͼaf .cm-scroller {height: 100% !important;}
+.ͼae .cm-scroller {height: 100% !important;}
+.ͼad .cm-scroller {height: 100% !important;}
+.ͼac .cm-scroller {height: 100% !important;}
+.ͼab .cm-scroller {height: 100% !important;}
+.ͼaa .cm-scroller {height: 100% !important;}
+.ͼa9 .cm-scroller {height: 100% !important;}
+.ͼa8 .cm-scroller {height: 100% !important;}
+.ͼa7 .cm-scroller {height: 100% !important;}
+.ͼa6 .cm-scroller {height: 100% !important;}
+.ͼa5 .cm-scroller {height: 100% !important;}
+.ͼa4 .cm-scroller {height: 100% !important;}
+.ͼa3 .cm-scroller {height: 100% !important;}
+.ͼa2 .cm-scroller {height: 100% !important;}
+.ͼa1 .cm-scroller {height: 100% !important;}
+.ͼa0 .cm-scroller {height: 100% !important;}
+.ͼ9z .cm-scroller {height: 100% !important;}
+.ͼ9y .cm-scroller {height: 100% !important;}
+.ͼ9x .cm-scroller {height: 100% !important;}
+.ͼ9w .cm-scroller {height: 100% !important;}
+.ͼ9v .cm-scroller {height: 100% !important;}
+.ͼ9u .cm-scroller {height: 100% !important;}
+.ͼ9t .cm-scroller {height: 100% !important;}
+.ͼ9s .cm-scroller {height: 100% !important;}
+.ͼ9r .cm-scroller {height: 100% !important;}
+.ͼ9q .cm-scroller {height: 100% !important;}
+.ͼ9p .cm-scroller {height: 100% !important;}
+.ͼ9o .cm-scroller {height: 100% !important;}
+.ͼ9n .cm-scroller {height: 100% !important;}
+.ͼ9m .cm-scroller {height: 100% !important;}
+.ͼ9l .cm-scroller {height: 100% !important;}
+.ͼ9k .cm-scroller {height: 100% !important;}
+.ͼ9j .cm-scroller {height: 100% !important;}
+.ͼ9i .cm-scroller {height: 100% !important;}
+.ͼ9h .cm-scroller {height: 100% !important;}
+.ͼ9g .cm-scroller {height: 100% !important;}
+.ͼ9f .cm-scroller {height: 100% !important;}
+.ͼ9e .cm-scroller {height: 100% !important;}
+.ͼ9d .cm-scroller {height: 100% !important;}
+.ͼ9c .cm-scroller {height: 100% !important;}
+.ͼ9b .cm-scroller {height: 100% !important;}
+.ͼ9a .cm-scroller {height: 100% !important;}
+.ͼ99 .cm-scroller {height: 100% !important;}
+.ͼ98 .cm-scroller {height: 100% !important;}
+.ͼ97 .cm-scroller {height: 100% !important;}
+.ͼ96 .cm-scroller {height: 100% !important;}
+.ͼ95 .cm-scroller {height: 100% !important;}
+.ͼ94 .cm-scroller {height: 100% !important;}
+.ͼ93 .cm-scroller {height: 100% !important;}
+.ͼ92 .cm-scroller {height: 100% !important;}
+.ͼ91 .cm-scroller {height: 100% !important;}
+.ͼ90 .cm-scroller {height: 100% !important;}
+.ͼ8z .cm-scroller {height: 100% !important;}
+.ͼ8y .cm-scroller {height: 100% !important;}
+.ͼ8x .cm-scroller {height: 100% !important;}
+.ͼ8w .cm-scroller {height: 100% !important;}
+.ͼ8v .cm-scroller {height: 100% !important;}
+.ͼ8u .cm-scroller {height: 100% !important;}
+.ͼ8t .cm-scroller {height: 100% !important;}
+.ͼ8s .cm-scroller {height: 100% !important;}
+.ͼ8r .cm-scroller {height: 100% !important;}
+.ͼ8q .cm-scroller {height: 100% !important;}
+.ͼ8p .cm-scroller {height: 100% !important;}
+.ͼ8o .cm-scroller {height: 100% !important;}
+.ͼ8n .cm-scroller {height: 100% !important;}
+.ͼ8m .cm-scroller {height: 100% !important;}
+.ͼ8l .cm-scroller {height: 100% !important;}
+.ͼ8k .cm-scroller {height: 100% !important;}
+.ͼ8j .cm-scroller {height: 100% !important;}
+.ͼ8i .cm-scroller {height: 100% !important;}
+.ͼ8h .cm-scroller {height: 100% !important;}
+.ͼ8g .cm-scroller {height: 100% !important;}
+.ͼ8f .cm-scroller {height: 100% !important;}
+.ͼ8e .cm-scroller {height: 100% !important;}
+.ͼ8d .cm-scroller {height: 100% !important;}
+.ͼ8c .cm-scroller {height: 100% !important;}
+.ͼ8b .cm-scroller {height: 100% !important;}
+.ͼ8a .cm-scroller {height: 100% !important;}
+.ͼ89 .cm-scroller {height: 100% !important;}
+.ͼ88 .cm-scroller {height: 100% !important;}
+.ͼ87 .cm-scroller {height: 100% !important;}
+.ͼ86 .cm-scroller {height: 100% !important;}
+.ͼ85 .cm-scroller {height: 100% !important;}
+.ͼ84 .cm-scroller {height: 100% !important;}
+.ͼ83 .cm-scroller {height: 100% !important;}
+.ͼ82 .cm-scroller {height: 100% !important;}
+.ͼ81 .cm-scroller {height: 100% !important;}
+.ͼ80 .cm-scroller {height: 100% !important;}
+.ͼ7z .cm-scroller {height: 100% !important;}
+.ͼ7y .cm-scroller {height: 100% !important;}
+.ͼ7x .cm-scroller {height: 100% !important;}
+.ͼ7w .cm-scroller {height: 100% !important;}
+.ͼ7v .cm-scroller {height: 100% !important;}
+.ͼ7u .cm-scroller {height: 100% !important;}
+.ͼ7t .cm-scroller {height: 100% !important;}
+.ͼ7s .cm-scroller {height: 100% !important;}
+.ͼ7r .cm-scroller {height: 100% !important;}
+.ͼ7q .cm-scroller {height: 100% !important;}
+.ͼ7p .cm-scroller {height: 100% !important;}
+.ͼ7o .cm-scroller {height: 100% !important;}
+.ͼ7n .cm-scroller {height: 100% !important;}
+.ͼ7m .cm-scroller {height: 100% !important;}
+.ͼ7l .cm-scroller {height: 100% !important;}
+.ͼ7k .cm-scroller {height: 100% !important;}
+.ͼ7j .cm-scroller {height: 100% !important;}
+.ͼ7i .cm-scroller {height: 100% !important;}
+.ͼ7h .cm-scroller {height: 100% !important;}
+.ͼ7g .cm-scroller {height: 100% !important;}
+.ͼ7f .cm-scroller {height: 100% !important;}
+.ͼ7e .cm-scroller {height: 100% !important;}
+.ͼ7d .cm-scroller {height: 100% !important;}
+.ͼ7c .cm-scroller {height: 100% !important;}
+.ͼ7b .cm-scroller {height: 100% !important;}
+.ͼ7a .cm-scroller {height: 100% !important;}
+.ͼ79 .cm-scroller {height: 100% !important;}
+.ͼ78 .cm-scroller {height: 100% !important;}
+.ͼ77 .cm-scroller {height: 100% !important;}
+.ͼ76 .cm-scroller {height: 100% !important;}
+.ͼ75 .cm-scroller {height: 100% !important;}
+.ͼ74 .cm-scroller {height: 100% !important;}
+.ͼ73 .cm-scroller {height: 100% !important;}
+.ͼ72 .cm-scroller {height: 100% !important;}
+.ͼ71 .cm-scroller {height: 100% !important;}
+.ͼ70 .cm-scroller {height: 100% !important;}
+.ͼ6z .cm-scroller {height: 100% !important;}
+.ͼ6y .cm-scroller {height: 100% !important;}
+.ͼ6x .cm-scroller {height: 100% !important;}
+.ͼ6w .cm-scroller {height: 100% !important;}
+.ͼ6v .cm-scroller {height: 100% !important;}
+.ͼ6u .cm-scroller {height: 100% !important;}
+.ͼ6t .cm-scroller {height: 100% !important;}
+.ͼ6s .cm-scroller {height: 100% !important;}
+.ͼ6r .cm-scroller {height: 100% !important;}
+.ͼ6q .cm-scroller {height: 100% !important;}
+.ͼ6p .cm-scroller {height: 100% !important;}
+.ͼ6o .cm-scroller {height: 100% !important;}
+.ͼ6n .cm-scroller {height: 100% !important;}
+.ͼ6m .cm-scroller {height: 100% !important;}
+.ͼ6l .cm-scroller {height: 100% !important;}
+.ͼ6k .cm-scroller {height: 100% !important;}
+.ͼ6j .cm-scroller {height: 100% !important;}
+.ͼ6i .cm-scroller {height: 100% !important;}
+.ͼ6h .cm-scroller {height: 100% !important;}
+.ͼ6g .cm-scroller {height: 100% !important;}
+.ͼ6f .cm-scroller {height: 100% !important;}
+.ͼ6e .cm-scroller {height: 100% !important;}
+.ͼ6d .cm-scroller {height: 100% !important;}
+.ͼ6c .cm-scroller {height: 100% !important;}
+.ͼ6b .cm-scroller {height: 100% !important;}
+.ͼ6a .cm-scroller {height: 100% !important;}
+.ͼ69 .cm-scroller {height: 100% !important;}
+.ͼ68 .cm-scroller {height: 100% !important;}
+.ͼ67 .cm-scroller {height: 100% !important;}
+.ͼ66 .cm-scroller {height: 100% !important;}
+.ͼ65 .cm-scroller {height: 100% !important;}
+.ͼ64 .cm-scroller {height: 100% !important;}
+.ͼ63 .cm-scroller {height: 100% !important;}
+.ͼ62 .cm-scroller {height: 100% !important;}
+.ͼ61 .cm-scroller {height: 100% !important;}
+.ͼ60 .cm-scroller {height: 100% !important;}
+.ͼ5z .cm-scroller {height: 100% !important;}
+.ͼ5y .cm-scroller {height: 100% !important;}
+.ͼ5x .cm-scroller {height: 100% !important;}
+.ͼ5w .cm-scroller {height: 100% !important;}
+.ͼ5v .cm-scroller {height: 100% !important;}
+.ͼ5u .cm-scroller {height: 100% !important;}
+.ͼ5t .cm-scroller {height: 100% !important;}
+.ͼ5s .cm-scroller {height: 100% !important;}
+.ͼ5r .cm-scroller {height: 100% !important;}
+.ͼ5q .cm-scroller {height: 100% !important;}
+.ͼ5p .cm-scroller {height: 100% !important;}
+.ͼ5o .cm-scroller {height: 100% !important;}
+.ͼ5n .cm-scroller {height: 100% !important;}
+.ͼ5m .cm-scroller {height: 100% !important;}
+.ͼ5l .cm-scroller {height: 100% !important;}
+.ͼ5k .cm-scroller {height: 100% !important;}
+.ͼ5j .cm-scroller {height: 100% !important;}
+.ͼ5i .cm-scroller {height: 100% !important;}
+.ͼ5h .cm-scroller {height: 100% !important;}
+.ͼ5g .cm-scroller {height: 100% !important;}
+.ͼ5f .cm-scroller {height: 100% !important;}
+.ͼ5e .cm-scroller {height: 100% !important;}
+.ͼ5d .cm-scroller {height: 100% !important;}
+.ͼ5c .cm-scroller {height: 100% !important;}
+.ͼ5b .cm-scroller {height: 100% !important;}
+.ͼ5a .cm-scroller {height: 100% !important;}
+.ͼ59 .cm-scroller {height: 100% !important;}
+.ͼ58 .cm-scroller {height: 100% !important;}
+.ͼ57 .cm-scroller {height: 100% !important;}
+.ͼ56 .cm-scroller {height: 100% !important;}
+.ͼ55 .cm-scroller {height: 100% !important;}
+.ͼ54 .cm-scroller {height: 100% !important;}
+.ͼ53 .cm-scroller {height: 100% !important;}
+.ͼ52 .cm-scroller {height: 100% !important;}
+.ͼ51 .cm-scroller {height: 100% !important;}
+.ͼ50 .cm-scroller {height: 100% !important;}
+.ͼ4z .cm-scroller {height: 100% !important;}
+.ͼ4y .cm-scroller {height: 100% !important;}
+.ͼ4x .cm-scroller {height: 100% !important;}
+.ͼ4w .cm-scroller {height: 100% !important;}
+.ͼ4v .cm-scroller {height: 100% !important;}
+.ͼ4u .cm-scroller {height: 100% !important;}
+.ͼ4t .cm-scroller {height: 100% !important;}
+.ͼ4s .cm-scroller {height: 100% !important;}
+.ͼ4r .cm-scroller {height: 100% !important;}
+.ͼ4q .cm-scroller {height: 100% !important;}
+.ͼ4p .cm-scroller {height: 100% !important;}
+.ͼ4o .cm-scroller {height: 100% !important;}
+.ͼ4n .cm-scroller {height: 100% !important;}
+.ͼ4m .cm-scroller {height: 100% !important;}
+.ͼ4l .cm-scroller {height: 100% !important;}
+.ͼ4k .cm-scroller {height: 100% !important;}
+.ͼ4j .cm-scroller {height: 100% !important;}
+.ͼ4i .cm-scroller {height: 100% !important;}
+.ͼ4h .cm-scroller {height: 100% !important;}
+.ͼ4g .cm-scroller {height: 100% !important;}
+.ͼ4f .cm-scroller {height: 100% !important;}
+.ͼ4e .cm-scroller {height: 100% !important;}
+.ͼ4d .cm-scroller {height: 100% !important;}
+.ͼ4c .cm-scroller {height: 100% !important;}
+.ͼ4b .cm-scroller {height: 100% !important;}
+.ͼ4a .cm-scroller {height: 100% !important;}
+.ͼ49 .cm-scroller {height: 100% !important;}
+.ͼ48 .cm-scroller {height: 100% !important;}
+.ͼ47 .cm-scroller {height: 100% !important;}
+.ͼ46 .cm-scroller {height: 100% !important;}
+.ͼ45 .cm-scroller {height: 100% !important;}
+.ͼ44 .cm-scroller {height: 100% !important;}
+.ͼ43 .cm-scroller {height: 100% !important;}
+.ͼ42 .cm-scroller {height: 100% !important;}
+.ͼ41 .cm-scroller {height: 100% !important;}
+.ͼ40 .cm-scroller {height: 100% !important;}
+.ͼ3z .cm-scroller {height: 100% !important;}
+.ͼ3y .cm-scroller {height: 100% !important;}
+.ͼ3x .cm-scroller {height: 100% !important;}
+.ͼ3w .cm-scroller {height: 100% !important;}
+.ͼ3v .cm-scroller {height: 100% !important;}
+.ͼ3u .cm-scroller {height: 100% !important;}
+.ͼ3t .cm-scroller {height: 100% !important;}
+.ͼ3s .cm-scroller {height: 100% !important;}
+.ͼ3r .cm-scroller {height: 100% !important;}
+.ͼ3q .cm-scroller {height: 100% !important;}
+.ͼ3p .cm-scroller {height: 100% !important;}
+.ͼ3o .cm-scroller {height: 100% !important;}
+.ͼ3n .cm-scroller {height: 100% !important;}
+.ͼ3m .cm-scroller {height: 100% !important;}
+.ͼ3l .cm-scroller {height: 100% !important;}
+.ͼ3k .cm-scroller {height: 100% !important;}
+.ͼ3j .cm-scroller {height: 100% !important;}
+.ͼ3i .cm-scroller {height: 100% !important;}
+.ͼ3h .cm-scroller {height: 100% !important;}
+.ͼ3g .cm-scroller {height: 100% !important;}
+.ͼ3f .cm-scroller {height: 100% !important;}
+.ͼ3e .cm-scroller {height: 100% !important;}
+.ͼ3d .cm-scroller {height: 100% !important;}
+.ͼ3c .cm-scroller {height: 100% !important;}
+.ͼ3b .cm-scroller {height: 100% !important;}
+.ͼ3a .cm-scroller {height: 100% !important;}
+.ͼ39 .cm-scroller {height: 100% !important;}
+.ͼ38 .cm-scroller {height: 100% !important;}
+.ͼ37 .cm-scroller {height: 100% !important;}
+.ͼ36 .cm-scroller {height: 100% !important;}
+.ͼ35 .cm-scroller {height: 100% !important;}
+.ͼ34 .cm-scroller {height: 100% !important;}
+.ͼ33 .cm-scroller {height: 100% !important;}
+.ͼ32 .cm-scroller {height: 100% !important;}
+.ͼ31 .cm-scroller {height: 100% !important;}
+.ͼ30 .cm-scroller {height: 100% !important;}
+.ͼ2z .cm-scroller {height: 100% !important;}
+.ͼ2y .cm-scroller {height: 100% !important;}
+.ͼ2x .cm-scroller {height: 100% !important;}
+.ͼ2w .cm-scroller {height: 100% !important;}
+.ͼ2v .cm-scroller {height: 100% !important;}
+.ͼ2u .cm-scroller {height: 100% !important;}
+.ͼ2t .cm-scroller {height: 100% !important;}
+.ͼ2s .cm-scroller {height: 100% !important;}
+.ͼ2r .cm-scroller {height: 100% !important;}
+.ͼ2q .cm-scroller {height: 100% !important;}
+.ͼ2p .cm-scroller {height: 100% !important;}
+.ͼ2o .cm-scroller {height: 100% !important;}
+.ͼ2n .cm-scroller {height: 100% !important;}
+.ͼ2m .cm-scroller {height: 100% !important;}
+.ͼ2l .cm-scroller {height: 100% !important;}
+.ͼ2k .cm-scroller {height: 100% !important;}
+.ͼ2j .cm-scroller {height: 100% !important;}
+.ͼ2i .cm-scroller {height: 100% !important;}
+.ͼ2h .cm-scroller {height: 100% !important;}
+.ͼ2g .cm-scroller {height: 100% !important;}
+.ͼ2f .cm-scroller {height: 100% !important;}
+.ͼ2e .cm-scroller {height: 100% !important;}
+.ͼ2d .cm-scroller {height: 100% !important;}
+.ͼ2c .cm-scroller {height: 100% !important;}
+.ͼ2b .cm-scroller {height: 100% !important;}
+.ͼ2a .cm-scroller {height: 100% !important;}
+.ͼ29 .cm-scroller {height: 100% !important;}
+.ͼ28 .cm-scroller {height: 100% !important;}
+.ͼ27 .cm-scroller {height: 100% !important;}
+.ͼ26 .cm-scroller {height: 100% !important;}
+.ͼ25 .cm-scroller {height: 100% !important;}
+.ͼ24 .cm-scroller {height: 100% !important;}
+.ͼ23 .cm-scroller {height: 100% !important;}
+.ͼ22 .cm-scroller {height: 100% !important;}
+.ͼ21 .cm-scroller {height: 100% !important;}
+.ͼ20 .cm-scroller {height: 100% !important;}
+.ͼ1z .cm-scroller {height: 100% !important;}
+.ͼ1y .cm-scroller {height: 100% !important;}
+.ͼ1x .cm-scroller {height: 100% !important;}
+.ͼ1w .cm-scroller {height: 100% !important;}
+.ͼ1v .cm-scroller {height: 100% !important;}
+.ͼ1u .cm-scroller {height: 100% !important;}
+.ͼ1t .cm-scroller {height: 100% !important;}
+.ͼ1s .cm-scroller {height: 100% !important;}
+.ͼ1q .cm-scroller {height: 100% !important;}
+.ͼ4 .cm-line ::selection, .ͼ4 .cm-line::selection {background-color: transparent !important;}
+.ͼ4 .cm-line {caret-color: transparent !important;}
+.ͼ4 .cm-content :focus::selection, .ͼ4 .cm-content :focus ::selection {background-color: Highlight !important;}
+.ͼ4 .cm-content :focus {caret-color: initial !important;}
+.ͼ4 .cm-content {caret-color: transparent !important;}
+</style><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><title>Target  (6/5/2025) - CSSBattle</title><meta property="og:description" content="The funnest CSS game for web designers &amp; developers"><meta name="twitter:card" content="summary_large_image"><link rel="shortcut icon" href="https://cssbattle.dev/images/logo-square.png"><style id="critical-css" type="ruby">/* CRITICAL CSS */
+          body {
+            background-color: #171d23;
+          }
+
+          body:after {
+            font-size: 1.5rem;
+            text-align: center;
+            font-family: 'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono',
+              'Lucida Console', monospace;
+            color: #cbd1e1;
+            display: block;
+            content: 'Hang on! The battleground is getting setup...';
+            width: 400px;
+            position: fixed;
+            top: 40vh;
+            left: calc(50vw - 200px);
+            opacity: 0;
+            animation: 0.3s show ease forwards;
+            animation-delay: 1s;
+          }
+
+          @keyframes show {
+            to {
+              opacity: 1;
+            }
+          }</style><meta property="og:url" content="https://cssbattle.dev/play/KqqVsiGHvJ8j5uxoMofQ"><meta property="og:image" content="https://cssbattle.dev/api/socialImage/target?id=KqqVsiGHvJ8j5uxoMofQ"><meta property="og:title" content="Target  (6/5/2025) - CSSBattle"><meta name="next-head-count" content="10"><link rel="preload" href="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/cf89ba9395d4150a.css" as="style"><link rel="stylesheet" href="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/cf89ba9395d4150a.css" data-n-g=""><link rel="preload" href="https://cssbattle.dev/_next/static/css/842243aa66d17b08.css" as="style"><noscript data-n-css=""></noscript><style data-n-href="/_next/static/css/85e14ed36b8de0d7.css">.Preview_preview__pMaO6{--clr-measurement:#f22}.Preview_previewDistance__bcOmJ{background:var(--clr-measurement);padding:.2rem;border-radius:.3rem;font-weight:700;position:absolute;color:#fff;pointer-events:none;z-index:1}.Preview_previewTargetImage__z7Wfx{position:absolute;top:0;left:0;width:clamp(0px,400px,100%);pointer-events:none}.RadioTabs_radioTabs__d9zDK{border:2px solid var(--clr-border);padding:.3rem;border-radius:999px;font-size:var(--font-size-0);font-family:ClashGrotesk;font-weight:500;line-height:1.4}.RadioTabs_radioTabsFullWidth__oq2fN{width:100%;display:flex}.RadioTabs_radioTabsPrimary__igl35{font-size:var(--font-size-1);border:0;background:linear-gradient(95.41deg,rgba(var(--rgba-tile-top)) 0,rgba(var(--rgba-tile-bottom)) 101.76%);box-shadow:var(--hard-shadow);border-radius:16px;padding:.5rem}.RadioTabs_radioTabBtn__aLbrp{position:relative;padding:.3rem 1rem;display:inline-block;cursor:pointer;border-radius:20px}.RadioTabs_radioTabBtnPrimary__Nyq78{padding:.5rem 1.5rem;border-radius:8px}.RadioTabs_radioTabsFullWidth__oq2fN label{flex:1 1;text-align:center}.RadioTabs_activeIndicator___CbYq{position:absolute;top:0;left:0;width:100%;height:100%;border-radius:999px;background:linear-gradient(95deg,rgb(var(--rgb-tile-active-top)) 0,rgb(var(--rgb-tile-active-bottom)) 100%);box-shadow:inset 1px 1px 2px hsla(0,0%,100%,.1);border-radius:20px;pointer-events:none}.RadioTabs_activeIndicatorPrimary__8jTez{border-radius:8px}.RadioTabs_radioTabBtn__aLbrp input[type=radio]{opacity:0;position:absolute}.RadioTabs_radioTabBtn__aLbrp:has(label:focus-visible){outline:5px auto var(--clr-brand)}.BubbleLoader_fadedImageContainer__dtS_s{position:relative;mix-blend-mode:lighten}.BubbleLoader_fadedImageContainer__dtS_s img{opacity:.3}.BubbleLoader_fadedImageContainer__dtS_s:after{content:"";position:absolute;inset:0;background:radial-gradient(transparent,var(--bg-color,var(--clr-bg)) 75%);pointer-events:none}.InnerPageHeader_innerPageHeader__HSMOC{font-family:ClashGrotesk}.InnerPageHeader_innerPageHeader__HSMOC p{font-size:1rem;letter-spacing:.3px;font-weight:500;color:var(--clr-text-light)}.PreviousDailyTargets_calendarGrid__0hDp4{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:.5rem;justify-content:center}.PreviousDailyTargets_calendarGrid__0hDp4 .target-tile{width:auto!important}.PreviousDailyTargets_calendarGrid__0hDp4 .target-tile a[href*=twitter]{display:none}@media (max-width:600px){.PreviousDailyTargets_calendarGrid__0hDp4{grid-template-columns:repeat(1,minmax(0,1fr))}.PreviousDailyTargets_calendarGrid__0hDp4 .calendar__weekdays{display:none}}.daily_statsTile__iIBQR{padding:.75rem;flex:auto;border:2px solid var(--clr-border);border-radius:999px}.daily_statsTileNaked__4qSJf{border:0;padding:0}.daily_statsTileText__pvZFR{padding:0}.daily_statsTileIcon__0sSAw{background:var(--clr-border);height:2.5rem;width:2.5rem;border-radius:50%;margin-right:1rem;display:flex;align-items:center;justify-content:center}.daily_statsTileIcon__0sSAw svg{opacity:.5}.daily_statsTileName__55m00{font-family:ClashGrotesk;font-size:1rem;font-weight:500;color:var(--clr-text-light)}.daily_statsTileValue__5VzaP{font-family:IBM Plex Mono;font-size:1rem;font-weight:500;color:var(--clr-brand)}
+/*# sourceMappingURL=85e14ed36b8de0d7.css.map*/</style><script defer="defer" nomodule="" src="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/polyfills-c67a75d1b6f99dc8.js"></script><script src="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/webpack-c8ec384fb66206ab.js" defer="defer"></script><script src="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/framework-9c41163322aad58c.js" defer="defer"></script><script src="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/main-48f4cd6f66ae6ce4.js" defer="defer"></script><script src="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/_app-c56ac798d18a78c8.js" defer="defer"></script><script src="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/7564-6474acab28dfa427.js" defer="defer"></script><script src="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/4807-282b838a0330ce2b.js" defer="defer"></script><script src="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/2560-7b119b560ce34644.js" defer="defer"></script><script src="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/index-8c3a48b676fc496b.js" defer="defer"></script><script src="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/_buildManifest.js" defer="defer"></script><script src="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/_ssgManifest.js" defer="defer"></script><script src="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/rw.js" async="" data-rewardful="c4b788"></script><meta id="ConnectiveDocSignExtentionInstalled" name="ConnectiveDocSignExtentionInstalled" data-extension-version="1.0.5"><link as="script" rel="prefetch" href="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/723-b97c22d51dd9eacd.js"><link as="script" rel="prefetch" href="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/daily-123b70c3131349a2.js"><link as="script" rel="prefetch" href="https://cssbattle.dev/_next/static/chunks/9955-af6b9c62744dacf2.js"><link as="script" rel="prefetch" href="https://cssbattle.dev/_next/static/chunks/pages/battles-1f7c518902edf41d.js"><link as="script" rel="prefetch" href="https://cssbattle.dev/_next/static/chunks/5472-371431d1fded2e33.js"><link as="script" rel="prefetch" href="https://cssbattle.dev/_next/static/chunks/2041-86921f988aed7ce7.js"><link as="script" rel="prefetch" href="https://cssbattle.dev/_next/static/chunks/pages/versus-d7e80fd8435f0529.js"><link as="script" rel="prefetch" href="https://cssbattle.dev/_next/static/chunks/2774-3501d6305b1452d1.js"><link as="script" rel="prefetch" href="https://cssbattle.dev/_next/static/chunks/pages/leaderboard-4469d5d1e184c7e2.js"><link as="script" rel="prefetch" href="https://cssbattle.dev/_next/static/chunks/pages/learn-cf2185b50a1e1e2e.js"><link as="script" rel="prefetch" href="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/[username]-7c43cecc59a7bb1f.js"><link as="script" rel="prefetch" href="https://cssbattle.dev/_next/static/chunks/pages/2024-year-wrapped-ff2a16dab0d6cc48.js"><link as="script" rel="prefetch" href="https://cssbattle.dev/_next/static/chunks/pages/plus-d020ab2760960a09.js"><link as="script" rel="prefetch" href="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/dccc8973-9e321c0b0b3792cb.js"><link as="script" rel="prefetch" href="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/2272ea81-87dbf9f7fec5f81a.js"><link as="script" rel="prefetch" href="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/2152-050b983364f78e5a.js"><link as="script" rel="prefetch" href="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/2476-3a9a59928a638b21.js"><link as="script" rel="prefetch" href="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/1441-28dd449470d58d9d.js"><link as="script" rel="prefetch" href="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/380-38246c41c9efbd3c.js"><link as="script" rel="prefetch" href="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/[levelId]-31954ea3bc7c87af.js"><link as="script" rel="prefetch" href="https://cssbattle.dev/_next/static/chunks/3099-5a3eb75beea45e08.js"><link as="script" rel="prefetch" href="https://cssbattle.dev/_next/static/chunks/pages/me-84b86bda30fc249a.js"><link as="script" rel="prefetch" href="https://cssbattle.dev/_next/static/chunks/pages/settings-c0168388dcdfc42c.js"><link as="script" rel="prefetch" href="https://cssbattle.dev/_next/static/chunks/pages/leaderboard/%5Btype%5D-aaa186f9297bf6e6.js"><link as="script" rel="prefetch" href="https://cssbattle.dev/_next/static/chunks/pages/battle/%5BbattleId%5D-e0142b70fa848765.js"><link rel="stylesheet" type="text/css" href="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/0de8496d53c55f99.css"><link as="script" rel="prefetch" href="https://cssbattle.dev/_next/static/chunks/pages/newsletter-4be021a34fbde90e.js"><link as="script" rel="prefetch" href="https://cssbattle.dev/_next/static/chunks/pages/tips-600625245e265d5f.js"><link as="script" rel="prefetch" href="https://cssbattle.dev/_next/static/chunks/pages/faqs-decf8a666ec42b0a.js"><link as="script" rel="prefetch" href="https://cssbattle.dev/_next/static/chunks/pages/about-d884dd7a38642ec4.js"><link as="script" rel="prefetch" href="https://cssbattle.dev/_next/static/chunks/pages/hall-of-love-7ca09cc99acb3e43.js"><link as="script" rel="prefetch" href="https://cssbattle.dev/_next/static/chunks/pages/privacy-and-terms-fa1d5cfe5a3f7966.js"><link as="script" rel="prefetch" href="https://cssbattle.dev/_next/static/chunks/pages/advertise-a348258c3c8630d3.js"></head><body class="level-page"><div id="__next"><div class="page-wrapper"><div class="CSSBattleSidebar_sidebarContainer__05AyU CSSBattleSidebar_sidebarContainerCollapsible__yR0d3 "><div class="CSSBattleSidebar_sidebarLogo__MnsoD"><a class="logo-image logo-image--full" href="https://cssbattle.dev/"></a></div><div class="CSSBattleSidebar_sidebarLogoSmall__xPfvU"><a class="logo-image logo-image--glyph" href="https://cssbattle.dev/"></a></div><div class="CSSBattleSidebar_sidebarMainContent__CMtpS"><div class="CSSBattleSidebar_sidebarSection__kLPXk"><a class="CSSBattleSidebar_sidebarPageItem__0Z0k_
+      " href="https://cssbattle.dev/"><svg width="18" height="18" viewBox="0 0 24 24" fill="undefined" style="color:undefined;vertical-align:middle;margin-right:0;margin-left:0" xmlns="http://www.w3.org/2000/svg"><path d="M1.47461 10.8613C1.47461 10.5542 1.62402 10.2305 1.90625 9.99805L10.5557 2.73486C11.4355 1.99609 12.5811 1.99609 13.4609 2.73486L16.939 5.65674V4.38672C16.939 3.99658 17.1963 3.74756 17.5864 3.74756H19.1138C19.4956 3.74756 19.7529 3.99658 19.7529 4.38672V8.01416L22.0938 9.98975C22.376 10.2222 22.5254 10.5376 22.5254 10.8696C22.5254 11.4839 22.0771 11.8823 21.438 11.8823C21.1392 11.8823 20.8403 11.7329 20.5913 11.5171L12.4731 4.70215C12.166 4.44482 11.8423 4.44482 11.5518 4.70215L3.41699 11.5171C3.16797 11.7329 2.86914 11.8823 2.56201 11.8823C1.89795 11.8823 1.47461 11.4424 1.47461 10.8613ZM4.33008 18.415V12.5298L11.4688 6.54492C11.8008 6.2627 12.1992 6.25439 12.5396 6.54492L19.6699 12.5298V18.415C19.6699 19.6768 18.8315 20.4653 17.5034 20.4653H6.49658C5.16846 20.4653 4.33008 19.6768 4.33008 18.415ZM14.2329 18.3237V13.1108C14.2329 12.7124 13.9839 12.4551 13.5854 12.4551H10.4229C10.0244 12.4551 9.75879 12.7124 9.75879 13.1108V18.3237H14.2329Z" fill="currentColor"></path></svg><span class="CSSBattleSidebar_sidebarPageItemText__HjcHV">Home</span></a></div><div class="CSSBattleSidebar_sidebarSection__kLPXk"><div class="CSSBattleSidebar_sidebarSectionHeading__bbmVk"><div style="display:flex;gap:1rem;align-items:center;justify-content:flex-start;flex-direction:row" class="hstack "><span style="flex:1">Get Started</span></div></div><button type="button" class="dropdown-container dropdown-container--onboarding"><div class="dropdown-btn  dropdown-btn--dir-right dropdown-btn--minimal dropdown-btn--no-padding"><svg width="20" height="20" viewBox="0 0 20 20" style="transform:rotate(-90deg)"><circle r="7.5" cx="10" cy="10" fill="transparent" stroke="var(--clr-border-brighter)" stroke-width="2.5px"></circle><circle r="7.5" cx="10" cy="10" fill="transparent" stroke="var(--clr-green-bright)" stroke-width="2.5px" stroke-dasharray="47.115px" stroke-dashoffset="0px" stroke-linecap="round"></circle></svg><span class="CSSBattleSidebar_sidebarPageItemText__HjcHV">4<!-- -->/4 done</span></div></button></div><div class="CSSBattleSidebar_sidebarSection__kLPXk"><div class="CSSBattleSidebar_sidebarSectionHeading__bbmVk">Play</div><a class="CSSBattleSidebar_sidebarPageItem__0Z0k_
+      " href="https://cssbattle.dev/daily"><svg width="18" height="18" viewBox="0 0 24 24" fill="undefined" style="color:undefined;vertical-align:middle;margin-right:0;margin-left:0" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M5.374 20.065c-2.004 0-3.103-1.09-3.103-3.085V6.346c0-1.995 1.1-3.085 3.103-3.085h12.243c2.013 0 3.103 1.09 3.103 3.085V16.98c0 1.996-1.09 3.085-3.103 3.085H5.374Zm.167-2.267h11.91c.65 0 1.001-.317 1.001-1.01V8.973c0-.695-.351-1.011-1.002-1.011H5.541c-.66 0-1.002.316-1.002 1.01v7.814c0 .694.343 1.01 1.002 1.01Zm4.307-6.987c-.326 0-.44-.097-.44-.422V9.87c0-.316.114-.422.44-.422h.518c.317 0 .43.106.43.422v.519c0 .325-.113.421-.43.421h-.518Zm2.795 0c-.326 0-.44-.097-.44-.422V9.87c0-.316.114-.422.44-.422h.518c.316 0 .43.106.43.422v.519c0 .325-.114.421-.43.421h-.518Zm2.794 0c-.325 0-.439-.097-.439-.422V9.87c0-.316.114-.422.44-.422h.51c.325 0 .439.106.439.422v.519c0 .325-.114.421-.44.421h-.51Zm-8.384 2.75c-.325 0-.43-.096-.43-.421v-.519c0-.316.105-.422.43-.422h.518c.325 0 .431.106.431.422v.519c0 .325-.106.421-.43.421h-.52Zm2.795 0c-.326 0-.44-.096-.44-.421v-.519c0-.316.114-.422.44-.422h.518c.317 0 .43.106.43.422v.519c0 .325-.113.421-.43.421h-.518Zm2.795 0c-.326 0-.44-.096-.44-.421v-.519c0-.316.114-.422.44-.422h.518c.316 0 .43.106.43.422v.519c0 .325-.114.421-.43.421h-.518Zm2.794 0c-.325 0-.439-.096-.439-.421v-.519c0-.316.114-.422.44-.422h.51c.325 0 .439.106.439.422v.519c0 .325-.114.421-.44.421h-.51Zm-8.384 2.752c-.325 0-.43-.106-.43-.422v-.519c0-.325.105-.422.43-.422h.518c.325 0 .431.097.431.422v.519c0 .316-.106.421-.43.421h-.52Zm2.795 0c-.326 0-.44-.106-.44-.422v-.519c0-.325.114-.422.44-.422h.518c.317 0 .43.097.43.422v.519c0 .316-.113.421-.43.421h-.518Zm2.795 0c-.326 0-.44-.106-.44-.422v-.519c0-.325.114-.422.44-.422h.518c.316 0 .43.097.43.422v.519c0 .316-.114.421-.43.421h-.518Z"></path></svg><span class="CSSBattleSidebar_sidebarPageItemText__HjcHV">Daily targets</span></a><a class="CSSBattleSidebar_sidebarPageItem__0Z0k_
+      " href="https://cssbattle.dev/battles"><svg width="18" height="18" viewBox="0 0 24 24" fill="undefined" style="color:undefined;vertical-align:middle;margin-right:0;margin-left:0" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M6.2,2.44L18.1,14.34L20.22,12.22L21.63,13.63L19.16,16.1L22.34,19.28C22.73,19.67 22.73,20.3 22.34,20.69L21.63,21.4C21.24,21.79 20.61,21.79 20.22,21.4L17,18.23L14.56,20.7L13.15,19.29L15.27,17.17L3.37,5.27V2.44H6.2M15.89,10L20.63,5.26V2.44H17.8L13.06,7.18L15.89,10M10.94,15L8.11,12.13L5.9,14.34L3.78,12.22L2.37,13.63L4.84,16.1L1.66,19.29C1.27,19.68 1.27,20.31 1.66,20.7L2.37,21.41C2.76,21.8 3.39,21.8 3.78,21.41L7,18.23L9.44,20.7L10.85,19.29L8.73,17.17L10.94,15Z"></path></svg><span class="CSSBattleSidebar_sidebarPageItemText__HjcHV">Battles</span><span class="CSSBattleSidebar_sidebarPageItemTag__yxr8k">ongoing</span></a><a class="CSSBattleSidebar_sidebarPageItem__0Z0k_
+      " href="https://cssbattle.dev/versus"><svg width="18" height="18" viewBox="0 0 24 24" fill="undefined" style="color:undefined;vertical-align:middle;margin-right:0;margin-left:0" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M15.435 17.825c.226.38.09.883-.29 1.109a.802.802 0 0 1-1.108-.303l-3.706-6.42c-.239.097-.568.22-.928.425-1.412.813-2.082 2.25-3.61 3.14-.541.315-1.096.534-1.534.573-.522.052-.967-.116-1.257-.619L.424 11.264C.141 10.76.347 10.252.83 9.968c.303-.174.87-.322 1.49-.677 1.417-.818 2.087-2.255 3.615-3.138.541-.316 1.096-.529 1.534-.58.522-.046.96.122 1.257.631l6.71 11.621Zm-2.926-6.838 2.765-4.783c.297-.51.735-.677 1.25-.632.445.052.993.265 1.541.58 1.528.884 2.198 2.32 3.61 3.14.618.354 1.192.502 1.495.676.483.284.69.793.4 1.296l-2.572 4.466c-.29.503-.735.67-1.257.619-.439-.039-.993-.258-1.534-.574-1.528-.89-2.204-2.326-3.616-3.139-.354-.206-.683-.328-.922-.425l-.225.387-.935-1.612Zm-1.025 5.008-1.52 2.636a.802.802 0 0 1-1.11.303.825.825 0 0 1-.296-1.109l1.992-3.448.934 1.617Z"></path></svg><span class="CSSBattleSidebar_sidebarPageItemText__HjcHV">Versus</span><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--clr-brand)" color="var(--clr-brand)" style="color: var(--clr-brand); vertical-align: middle; margin-right: 1rem; margin-left: 0px;" xmlns="http://www.w3.org/2000/svg"><path d="M12 17a2 2 0 0 0 2-2 2 2 0 0 0-2-2 2 2 0 0 0-2 2 2 2 0 0 0 2 2m6-9a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2h1V6a5 5 0 0 1 5-5 5 5 0 0 1 5 5v2h1m-6-5a3 3 0 0 0-3 3v2h6V6a3 3 0 0 0-3-3Z" fill="currentColor"></path></svg></a><a class="CSSBattleSidebar_sidebarPageItem__0Z0k_
+      " href="https://cssbattle.dev/leaderboard"><svg width="18" height="18" viewBox="0 0 24 24" fill="undefined" style="color:undefined;vertical-align:middle;margin-right:0;margin-left:0" xmlns="http://www.w3.org/2000/svg"><path d="M2.3418 5.86914C2.3418 4.77051 3.08008 4.07617 4.23145 4.07617H5.83984C6.09473 3.14453 6.8418 2.6084 7.98438 2.6084H15.0156C16.1582 2.6084 16.9053 3.15332 17.1602 4.07617H18.7686C19.9199 4.07617 20.6582 4.77051 20.6582 5.86914C20.6582 9.34961 18.8477 11.7402 15.2881 12.8564C14.708 13.6123 14.0312 14.2451 13.3457 14.6758V18.0244H14.7256C16.0176 18.0244 16.7822 18.8242 16.7822 20.0811V21.6543C16.7822 22.2432 16.3252 22.6738 15.7627 22.6738H7.2373C6.6748 22.6738 6.21777 22.2432 6.21777 21.6543V20.0811C6.21777 18.8242 6.98242 18.0244 8.27441 18.0244H9.6543V14.6758C8.96875 14.2451 8.29199 13.6123 7.71191 12.8564C4.16113 11.7402 2.3418 9.34961 2.3418 5.86914ZM4.1875 6.2207C4.1875 8.00488 4.91699 9.38477 6.30566 10.2285C5.94531 9.38477 5.7168 8.43555 5.7168 7.44238V5.99219H4.40723C4.27539 5.99219 4.1875 6.08887 4.1875 6.2207ZM16.6943 10.2285C18.083 9.38477 18.8213 8.00488 18.8213 6.2207C18.8213 6.08887 18.7246 5.99219 18.5928 5.99219H17.2832V7.44238C17.2832 8.43555 17.0547 9.38477 16.6943 10.2285Z" fill="currentColor"></path></svg><span class="CSSBattleSidebar_sidebarPageItemText__HjcHV">Leaderboards</span></a><a class="CSSBattleSidebar_sidebarPageItem__0Z0k_
+      " href="https://cssbattle.dev/learn"><svg width="18" height="18" viewBox="0 0 24 24" fill="undefined" style="color:undefined;vertical-align:middle;margin-right:0;margin-left:0" xmlns="http://www.w3.org/2000/svg"><path d="M21.3516 8.46875C21.9609 8.75 22.3047 9.26562 22.3047 9.83594C22.3047 10.4062 21.9609 10.9141 21.3516 11.1953L13.7344 14.6797C12.8906 15.0703 12.1797 15.2422 11.5 15.2344C10.8203 15.2422 10.1172 15.0703 9.26562 14.6797L5.78906 13.0938L10.6328 10.8672C10.9062 10.9531 11.2109 11 11.5156 11C12.4922 11 13.4141 10.5312 13.4141 9.83594C13.4141 9.14844 12.4922 8.69531 11.5156 8.69531C10.5391 8.69531 9.60938 9.15625 9.60938 9.83594C9.60938 9.88281 9.61719 9.92188 9.64062 9.96094L4.375 12.4062L1.65625 11.1953C1.03906 10.9297 0.695312 10.4062 0.695312 9.83594C0.695312 9.26562 1.03906 8.75 1.65625 8.46875L9.26562 4.99219C10.1172 4.60938 10.8203 4.42969 11.5 4.4375C12.1797 4.42969 12.8906 4.60938 13.7344 4.99219L21.3516 8.46875ZM5.77344 14.4766L8.73438 15.8359C9.73438 16.2891 10.6484 16.5156 11.5 16.5078C12.3516 16.5156 13.2734 16.2891 14.2656 15.8359L19.4766 13.4453V15.5625C19.4766 18.1406 16.0703 20.1406 11.5 20.1406C9.21094 20.1406 7.20312 19.6328 5.77344 18.7891V14.4766ZM3.52344 13.4531L4.39844 13.8516V17.6406C3.83594 16.9922 3.52344 16.2422 3.52344 15.5625V13.4531ZM3.60156 20.625C3.60156 20.0391 3.90625 19.6094 4.39844 19.4531V17.6406C4.75 18.0703 5.21094 18.4531 5.77344 18.7891V19.4531C6.26562 19.6094 6.5625 20.0391 6.5625 20.625V22.6094C6.5625 23.3516 6.07031 23.8438 5.32812 23.8438H4.83594C4.09375 23.8438 3.60156 23.3516 3.60156 22.6094V20.625Z" fill="currentColor"></path></svg><span class="CSSBattleSidebar_sidebarPageItemText__HjcHV">Learn CSS</span><span class="CSSBattleSidebar_sidebarPageItemTag__yxr8k">new</span></a></div><div class="CSSBattleSidebar_sidebarSection__kLPXk"><div class="CSSBattleSidebar_sidebarSectionHeading__bbmVk">For you</div><a class="CSSBattleSidebar_sidebarPageItem__0Z0k_
+      " href="https://cssbattle.dev/player/belgius"><svg width="18" height="18" viewBox="0 0 24 24" fill="undefined" style="vertical-align: middle; margin-right: 0px; margin-left: 0px;" xmlns="http://www.w3.org/2000/svg"><path d="M11.5 12.2275C9.4126 12.2275 7.70557 10.3999 7.70557 8.08057C7.69629 5.82617 9.43115 3.99854 11.5 3.99854C13.5688 3.99854 15.2944 5.80762 15.2944 8.07129C15.2944 10.3999 13.5874 12.2275 11.5 12.2275ZM5.41406 20.9297C4.28223 20.9297 3.60498 20.3823 3.60498 19.4731C3.60498 17.0981 6.68506 13.8511 11.5 13.8511C16.3057 13.8511 19.395 17.0981 19.395 19.4731C19.395 20.3823 18.7178 20.9297 17.5859 20.9297H5.41406Z" fill="currentColor"></path></svg><span class="CSSBattleSidebar_sidebarPageItemText__HjcHV">Profile</span></a><a class="CSSBattleSidebar_sidebarPageItem__0Z0k_
+      " href="https://cssbattle.dev/me"><svg width="18" height="18" viewBox="0 0 24 24" fill="undefined" style="vertical-align: middle; margin-right: 0px; margin-left: 0px;" xmlns="http://www.w3.org/2000/svg"><path d="M8.26367 15.7061V5.18555C8.26367 4.5791 8.65918 4.20117 9.25684 4.20117H11.0234C11.6299 4.20117 12.0166 4.5791 12.0166 5.18555V15.7061C12.0166 16.3037 11.6299 16.6904 11.0234 16.6904H9.25684C8.65918 16.6904 8.26367 16.3037 8.26367 15.7061ZM12.9834 15.7061V7.27734C12.9834 6.67969 13.3613 6.29297 13.9678 6.29297H15.7432C16.3408 6.29297 16.7363 6.67969 16.7363 7.27734V15.7061C16.7363 16.3037 16.3408 16.6904 15.7432 16.6904H13.9678C13.3613 16.6904 12.9834 16.3037 12.9834 15.7061ZM3.54395 15.7061V8.97363C3.54395 8.37598 3.93945 7.98047 4.53711 7.98047H6.30371C6.90137 7.98047 7.29688 8.37598 7.29688 8.97363V15.7061C7.29688 16.3037 6.90137 16.6904 6.30371 16.6904H4.53711C3.93945 16.6904 3.54395 16.3037 3.54395 15.7061ZM17.7031 15.7061V10.6348C17.7031 10.0371 18.0898 9.65039 18.6963 9.65039H20.4629C21.0605 9.65039 21.4561 10.0371 21.4561 10.6348V15.7061C21.4561 16.3037 21.0605 16.6904 20.4629 16.6904H18.6963C18.0898 16.6904 17.7031 16.3037 17.7031 15.7061ZM2.39258 19.1865C2.39258 18.5186 2.90234 18.0527 3.54395 18.0527H21.4561C22.1064 18.0527 22.6074 18.5186 22.6074 19.1865C22.6074 19.8457 22.1064 20.3115 21.4561 20.3115H3.54395C2.90234 20.3115 2.39258 19.8457 2.39258 19.1865Z" fill="currentColor"></path></svg><span class="CSSBattleSidebar_sidebarPageItemText__HjcHV">Stats</span></a><a class="CSSBattleSidebar_sidebarPageItem__0Z0k_
+      " href="https://cssbattle.dev/settings"><svg width="18" height="18" viewBox="0 0 24 24" fill="undefined" style="vertical-align: middle; margin-right: 0px; margin-left: 0px;" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.21,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.21,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.67 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z"></path></svg><span class="CSSBattleSidebar_sidebarPageItemText__HjcHV">Settings</span></a></div></div><div class="CSSBattleSidebar_sidebarFooter__op2CS"><div style="display:flex;gap:1rem;align-items:stretch;justify-content:flex-start;flex-direction:column" class=""><a class="new-font button button--cssbattle" style="text-decoration: none;" href="https://cssbattle.dev/2024-year-wrapped">Your 2024 <br>@CSSBattle</a><a class="button button--glow button--full-width" href="https://cssbattle.dev/plus"><div style="display: flex; gap: 0px; align-items: center; justify-content: flex-start; flex-direction: row;" class="hstack "><span>Upgrade to </span><img height="18" width="37" class="pro-badge" src="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/pro-badge.svg" alt="Pro badge"></div><span class="button__border"></span></a></div></div></div><div class="content-wrapper"><div class="v2-header"><div class="header__left"><div style="display: flex; gap: 1rem; align-items: center; justify-content: flex-start; flex-direction: row;" class="hstack "><button class="button button--circular"><svg width="24" height="24" viewBox="0 0 24 24" fill="undefined" style="vertical-align: middle; margin-right: 0px; margin-left: 0px;" xmlns="http://www.w3.org/2000/svg"><path d="M4.25537 9.03516C3.72412 9.03516 3.30078 8.57861 3.30078 8.06396C3.30078 7.54102 3.72412 7.08447 4.25537 7.08447H19.7446C20.2759 7.08447 20.6992 7.52441 20.6992 8.06396C20.6992 8.58691 20.2759 9.03516 19.7446 9.03516H4.25537ZM4.25537 12.9863C3.72412 12.9863 3.30078 12.5298 3.30078 12.0151C3.30078 11.4839 3.72412 11.0356 4.25537 11.0356H19.7446C20.2759 11.0356 20.6992 11.4756 20.6992 12.0151C20.6992 12.5381 20.2759 12.9863 19.7446 12.9863H4.25537ZM4.25537 16.9458C3.72412 16.9458 3.30078 16.481 3.30078 15.9663C3.30078 15.4434 3.72412 14.9951 4.25537 14.9951H19.7446C20.2759 14.9951 20.6992 15.4268 20.6992 15.9663C20.6992 16.4893 20.2759 16.9458 19.7446 16.9458H4.25537Z" fill="currentColor"></path></svg></button><div class="Header_headerLogo__qxS_C desktop-only"><a class="logo-image logo-image--full" href="https://cssbattle.dev/"></a></div></div><div class="Header_breadcrumbs__mCYlG"><a style="display: block;" href="https://cssbattle.dev/daily"><div style="display: flex; gap: 0.2rem; align-items: center; justify-content: flex-start; flex-direction: row;" class="hstack "><svg width="18" height="18" viewBox="0 0 24 24" fill="var(--clr-text-lightest-final)" color="var(--clr-text-lightest-final)" style="color: var(--clr-text-lightest-final); vertical-align: middle; margin-right: 0px; margin-left: 0px;" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M5.374 20.065c-2.004 0-3.103-1.09-3.103-3.085V6.346c0-1.995 1.1-3.085 3.103-3.085h12.243c2.013 0 3.103 1.09 3.103 3.085V16.98c0 1.996-1.09 3.085-3.103 3.085H5.374Zm.167-2.267h11.91c.65 0 1.001-.317 1.001-1.01V8.973c0-.695-.351-1.011-1.002-1.011H5.541c-.66 0-1.002.316-1.002 1.01v7.814c0 .694.343 1.01 1.002 1.01Zm4.307-6.987c-.326 0-.44-.097-.44-.422V9.87c0-.316.114-.422.44-.422h.518c.317 0 .43.106.43.422v.519c0 .325-.113.421-.43.421h-.518Zm2.795 0c-.326 0-.44-.097-.44-.422V9.87c0-.316.114-.422.44-.422h.518c.316 0 .43.106.43.422v.519c0 .325-.114.421-.43.421h-.518Zm2.794 0c-.325 0-.439-.097-.439-.422V9.87c0-.316.114-.422.44-.422h.51c.325 0 .439.106.439.422v.519c0 .325-.114.421-.44.421h-.51Zm-8.384 2.75c-.325 0-.43-.096-.43-.421v-.519c0-.316.105-.422.43-.422h.518c.325 0 .431.106.431.422v.519c0 .325-.106.421-.43.421h-.52Zm2.795 0c-.326 0-.44-.096-.44-.421v-.519c0-.316.114-.422.44-.422h.518c.317 0 .43.106.43.422v.519c0 .325-.113.421-.43.421h-.518Zm2.795 0c-.326 0-.44-.096-.44-.421v-.519c0-.316.114-.422.44-.422h.518c.316 0 .43.106.43.422v.519c0 .325-.114.421-.43.421h-.518Zm2.794 0c-.325 0-.439-.096-.439-.421v-.519c0-.316.114-.422.44-.422h.51c.325 0 .439.106.439.422v.519c0 .325-.114.421-.44.421h-.51Zm-8.384 2.752c-.325 0-.43-.106-.43-.422v-.519c0-.325.105-.422.43-.422h.518c.325 0 .431.097.431.422v.519c0 .316-.106.421-.43.421h-.52Zm2.795 0c-.326 0-.44-.106-.44-.422v-.519c0-.325.114-.422.44-.422h.518c.317 0 .43.097.43.422v.519c0 .316-.113.421-.43.421h-.518Zm2.795 0c-.326 0-.44-.106-.44-.422v-.519c0-.325.114-.422.44-.422h.518c.316 0 .43.097.43.422v.519c0 .316-.114.421-.43.421h-.518Z"></path></svg><span style="letter-spacing: 0.3px; font-size: var(--font-size-1); font-family: ClashGrotesk; font-weight: 500; text-align: left; line-height: 1.4; font-style: normal; text-transform: none; word-break: initial; color: var(--clr-text-lightest-final);" class="desktop-only">Daily Targets</span></div></a><h2 class="level" style="opacity: 1; transform: none;">May 6, 2025</h2></div></div><div></div><div class="header__right"><div style="flex-grow:1"></div><div class="header__live-counter"><div class="header__live-counter-pulse"></div><span class="header__live-counter-number">64</span> Online</div><button aria-label="Light mode" class="button button--circular"><svg width="24" height="24" viewBox="0 0 24 24" fill="undefined" style="color:undefined;vertical-align:middle;margin-right:0;margin-left:0" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.9999 2.40002C12.3182 2.40002 12.6234 2.52645 12.8484 2.7515C13.0735 2.97654 13.1999 3.28176 13.1999 3.60002V4.80002C13.1999 5.11828 13.0735 5.42351 12.8484 5.64855C12.6234 5.8736 12.3182 6.00002 11.9999 6.00002C11.6816 6.00002 11.3764 5.8736 11.1514 5.64855C10.9263 5.42351 10.7999 5.11828 10.7999 4.80002V3.60002C10.7999 3.28176 10.9263 2.97654 11.1514 2.7515C11.3764 2.52645 11.6816 2.40002 11.9999 2.40002ZM16.7999 12C16.7999 13.2731 16.2942 14.494 15.394 15.3941C14.4938 16.2943 13.2729 16.8 11.9999 16.8C10.7269 16.8 9.50596 16.2943 8.60579 15.3941C7.70562 14.494 7.1999 13.2731 7.1999 12C7.1999 10.727 7.70562 9.50609 8.60579 8.60591C9.50596 7.70574 10.7269 7.20002 11.9999 7.20002C13.2729 7.20002 14.4938 7.70574 15.394 8.60591C16.2942 9.50609 16.7999 10.727 16.7999 12ZM16.2431 17.94L17.0915 18.7884C17.3178 19.007 17.6209 19.128 17.9356 19.1252C18.2502 19.1225 18.5512 18.9963 18.7737 18.7738C18.9962 18.5513 19.1224 18.2503 19.1251 17.9357C19.1278 17.6211 19.0069 17.3179 18.7883 17.0916L17.9399 16.2432C17.7136 16.0246 17.4105 15.9037 17.0958 15.9064C16.7812 15.9092 16.4802 16.0354 16.2577 16.2578C16.0352 16.4803 15.909 16.7813 15.9063 17.0959C15.9036 17.4106 16.0245 17.7137 16.2431 17.94ZM18.7871 5.21162C19.0121 5.43666 19.1384 5.74183 19.1384 6.06002C19.1384 6.37822 19.0121 6.68339 18.7871 6.90842L17.9399 7.75682C17.8292 7.87144 17.6968 7.96286 17.5504 8.02575C17.404 8.08864 17.2465 8.12174 17.0872 8.12313C16.9278 8.12451 16.7698 8.09415 16.6224 8.03381C16.4749 7.97347 16.3409 7.88437 16.2282 7.7717C16.1156 7.65903 16.0265 7.52505 15.9661 7.37757C15.9058 7.23009 15.8754 7.07208 15.8768 6.91274C15.8782 6.75341 15.9113 6.59594 15.9742 6.44954C16.0371 6.30313 16.1285 6.17072 16.2431 6.06002L17.0915 5.21162C17.3165 4.98666 17.6217 4.86028 17.9399 4.86028C18.2581 4.86028 18.5621 4.98666 18.7871 5.21162ZM20.3999 13.2C20.7182 13.2 21.0234 13.0736 21.2484 12.8486C21.4735 12.6235 21.5999 12.3183 21.5999 12C21.5999 11.6818 21.4735 11.3765 21.2484 11.1515C21.0234 10.9265 20.7182 10.8 20.3999 10.8H19.1999C18.8816 10.8 18.5764 10.9265 18.3514 11.1515C18.1263 11.3765 17.9999 11.6818 17.9999 12C17.9999 12.3183 18.1263 12.6235 18.3514 12.8486C18.5764 13.0736 18.8816 13.2 19.1999 13.2H20.3999ZM11.9999 18C12.3182 18 12.6234 18.1265 12.8484 18.3515C13.0735 18.5765 13.1999 18.8818 13.1999 19.2V20.4C13.1999 20.7183 13.0735 21.0235 12.8484 21.2486C12.6234 21.4736 12.3182 21.6 11.9999 21.6C11.6816 21.6 11.3764 21.4736 11.1514 21.2486C10.9263 21.0235 10.7999 20.7183 10.7999 20.4V19.2C10.7999 18.8818 10.9263 18.5765 11.1514 18.3515C11.3764 18.1265 11.6816 18 11.9999 18ZM6.0599 7.75682C6.17132 7.86832 6.3036 7.95677 6.4492 8.01714C6.5948 8.07751 6.75086 8.10861 6.90848 8.10867C7.0661 8.10872 7.22218 8.07773 7.36782 8.01747C7.51347 7.9572 7.64581 7.86884 7.7573 7.75742C7.86879 7.64601 7.95725 7.51373 8.01762 7.36813C8.07799 7.22253 8.10909 7.06647 8.10915 6.90885C8.1092 6.75123 8.07821 6.59514 8.01795 6.4495C7.95768 6.30386 7.86932 6.17152 7.7579 6.06002L6.9083 5.21162C6.68198 4.99303 6.37886 4.87208 6.06422 4.87482C5.74958 4.87755 5.44861 5.00375 5.22612 5.22624C5.00363 5.44873 4.87743 5.74971 4.87469 6.06434C4.87196 6.37898 4.99291 6.6821 5.2115 6.90842L6.0599 7.75682ZM7.7567 17.94L6.9083 18.7884C6.68198 19.007 6.37886 19.128 6.06422 19.1252C5.74958 19.1225 5.44861 18.9963 5.22612 18.7738C5.00363 18.5513 4.87743 18.2503 4.87469 17.9357C4.87196 17.6211 4.99291 17.3179 5.2115 17.0916L6.0599 16.2432C6.28623 16.0246 6.58935 15.9037 6.90398 15.9064C7.21862 15.9092 7.51959 16.0354 7.74208 16.2578C7.96457 16.4803 8.09078 16.7813 8.09351 17.0959C8.09625 17.4106 7.97529 17.7137 7.7567 17.94ZM4.7999 13.2C5.11816 13.2 5.42339 13.0736 5.64843 12.8486C5.87347 12.6235 5.9999 12.3183 5.9999 12C5.9999 11.6818 5.87347 11.3765 5.64843 11.1515C5.42339 10.9265 5.11816 10.8 4.7999 10.8H3.5999C3.28164 10.8 2.97642 10.9265 2.75137 11.1515C2.52633 11.3765 2.3999 11.6818 2.3999 12C2.3999 12.3183 2.52633 12.6235 2.75137 12.8486C2.97642 13.0736 3.28164 13.2 3.5999 13.2H4.7999Z" fill="currentColor"></path></svg></button><div class="user-info"><button type="button" class="dropdown-container "><div class="dropdown-btn   dropdown-btn--user"><div style="display: flex; gap: 0.3rem; align-items: center; justify-content: flex-start; flex-direction: row;" class="hstack "><img src="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/126781036.jpg" class="user-info__avatar" alt="User profile"><span class="desktop-only">Aarmano</span></div></div></button></div></div></div><div class="page-content page-content--no-padding"><div class="page-content__inner page-content__inner--fluid"><div class="container container--fixed-height"><div class="container__item container__item--main container__item--editor"><div class="Editor_editor__32JYa" style="--fontSize: 0;"><div class="item__header  "><div style="display: flex; gap: 0.5rem; align-items: center; justify-content: flex-start; flex-direction: row;" class="hstack "><h3 class="header__title">Editor</h3><div style="display: flex; gap: 0.25rem; align-items: center; justify-content: flex-start; flex-direction: row;" class="hstack "><kbd class="pill  pill--key ">ctrl</kbd><kbd class="pill  pill--key ">shift</kbd><kbd class="pill  pill--key ">e</kbd></div></div><div class="header__extra-info"><div style="display: flex; gap: 1rem; align-items: center; justify-content: flex-end; flex-direction: row;" class="hstack "><span>369 characters</span><button type="button" class="dropdown-container d-f"><div class="dropdown-btn   dropdown-btn--mini"><svg width="16" height="16" viewBox="0 0 24 24" fill="undefined" style="vertical-align: middle; margin-right: 0px; margin-left: 0px;" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.21,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.21,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.67 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z"></path></svg></div></button></div></div></div><div class="cm-theme"><div class="cm-editor cm-focused ͼ1 ͼ3 ͼ4 ͼy0 ͼ1e"><div class="cm-announced" aria-live="polite"><div>Selection deleted</div></div><div tabindex="-1" class="cm-scroller"><div class="cm-gutters" aria-hidden="true" style="min-height: 212.8px; position: sticky;"><div class="cm-gutter cm-lineNumbers"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;">9</div><div class="cm-gutterElement" style="height: 76.8px; margin-top: 4px;">1</div><div class="cm-gutterElement" style="height: 51.2px;">2</div><div class="cm-gutterElement cm-activeLineGutter" style="height: 76.8px;">3</div></div><div class="cm-gutter cm-foldGutter"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;"><span title="Unfold line">›</span></div><div class="cm-gutterElement" style="height: 76.8px; margin-top: 4px;"><span title="Fold line">⌄</span></div><div class="cm-gutterElement" style="height: 51.2px;"><span title="Fold line">⌄</span></div><div class="cm-gutterElement cm-activeLineGutter" style="height: 76.8px;"></div></div><div class="cm-gutter cm-foldGutter"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;"><span title="Unfold line">›</span></div><div class="cm-gutterElement" style="height: 76.8px; margin-top: 4px;"><span title="Fold line">⌄</span></div><div class="cm-gutterElement" style="height: 51.2px;"><span title="Fold line">⌄</span></div><div class="cm-gutterElement cm-activeLineGutter" style="height: 76.8px;"></div></div></div><div style="tab-size: 4;" spellcheck="false" autocorrect="off" autocapitalize="none" translate="no" contenteditable="true" class="cm-content cm-lineWrapping" role="textbox" aria-multiline="true" data-language="html" aria-autocomplete="list"><div class="cm-line"><span class="ͼ1f">&lt;</span><span class="ͼ1h">p</span><span class="ͼ1f">&gt;</span><span class="ͼ1f">&lt;/</span><span class="ͼ1h">p</span><span class="ͼ1f">&gt;</span><span class="ͼ1f">&lt;</span><span class="ͼ1h">style</span><span class="ͼ1f">&gt;</span><span class="ͼ1h">body</span><span class="ͼ1f">{</span><span class="ͼ1l">display</span><span class="ͼ1m">:</span> <span class="ͼ1g">flex</span><span class="ͼ1m">;</span><span class="ͼ1l">height</span><span class="ͼ1m">:</span> <span class="ͼ1g">100</span><span class="ͼ1m">%</span><span class="ͼ1m">;</span><span class="ͼ1l">justify-content</span><span class="ͼ1m">:</span> <span class="ͼ1g">left</span><span class="ͼ1m">;</span><span class="ͼ1l">background</span><span class="ͼ1m">:</span> <span class="ͼ1g">linear-gradient</span><span class="ͼ1f">(</span><span class="ͼ1g">to</span> <span class="ͼ1g">bottom</span><span class="ͼ1m">,</span> #EBF6F0 <span class="ͼ1g">232</span><span class="ͼ1m">px</span><span class="ͼ1m">,</span> #4E4B44 <span class="ͼ1g">232</span><span class="ͼ1m">px</span><span class="ͼ1m">,</span> #4E4B44<span class="ͼ1f">)</span><span class="ͼ1m">;</span><span class="ͼ1f">}</span></div><div class="cm-line">  <span class="ͼ1h">p</span><span class="ͼ1f">{</span><span class="ͼ1l">position</span><span class="ͼ1m">:</span> <span class="ͼ1g">absolute</span><span class="ͼ1m">;</span><span class="ͼ1l">top</span><span class="ͼ1m">:</span> <span class="ͼ1g">212</span><span class="ͼ1m">px</span><span class="ͼ1m">;</span><span class="ͼ1l">left</span><span class="ͼ1m">:</span> <span class="ͼ1g">36</span><span class="ͼ1m">px</span><span class="ͼ1m">;</span><span class="ͼ1l">width</span><span class="ͼ1m">:</span> <span class="ͼ1g">40</span><span class="ͼ1m">px</span><span class="ͼ1m">;</span><span class="ͼ1l">height</span><span class="ͼ1m">:</span> <span class="ͼ1g">40</span><span class="ͼ1m">px</span><span class="ͼ1m">;</span><span class="ͼ1l">background</span><span class="ͼ1m">:</span> #4A9A86<span class="ͼ1m">;</span></div><div class="cm-activeLine cm-line">    <span class="ͼ1l">border-radius</span><span class="ͼ1m">:</span> <span class="ͼ1g">50</span><span class="ͼ1m">%</span><span class="ͼ1m">;</span><span class="ͼ1l">box-shadow</span><span class="ͼ1m">:</span><span class="ͼ1g">62</span><span class="ͼ1m">px</span> <span class="ͼ1g">0</span> <span class="ͼ1g">0</span> <span class="ͼ1g">10</span><span class="ͼ1m">px</span> #4A9A86<span class="ͼ1m">,</span> <span class="ͼ1g">144</span><span class="ͼ1m">px</span> <span class="ͼ1g">0</span> <span class="ͼ1g">0</span> <span class="ͼ1g">20</span><span class="ͼ1m">px</span> #4A9A86<span class="ͼ1m">,</span> <span class="ͼ1g">226</span><span class="ͼ1m">px</span> <span class="ͼ1g">0</span> <span class="ͼ1g">0</span> <span class="ͼ1g">10</span><span class="ͼ1m">px</span> #4A9A86<span class="ͼ1m">,</span> <span class="ͼ1g">288</span><span class="ͼ1m">px</span> <span class="ͼ1g">0</span> #4A9A86<span class="ͼ1m">;</span><span class="ͼ1f">}</span><span class="cm-matchingBracket"><span class="ͼ1f">&lt;/</span></span><span class="ͼ1h">style</span><span class="cm-matchingBracket"><span class="ͼ1f">&gt;</span></span></div></div><div class="cm-layer cm-layer-above cm-cursorLayer" aria-hidden="true" style="z-index: 150; animation-duration: 1200ms; animation-name: cm-blink2;"><div class="cm-cursor cm-cursor-primary" style="left: 212.467px; top: 185.5px; height: 21px;"></div></div><div class="cm-layer cm-selectionLayer" aria-hidden="true" style="z-index: -2;"></div></div></div></div><div class="editor-console  editor-console--success">No errors found</div></div> <div class="btn-group--with-background"><div class="btn-group    "><button type="button" class="button   
+      
+      
+        " data-transition="true"><div style="display: flex; gap: 0.3rem; align-items: center; justify-content: flex-start; flex-direction: row;" class="hstack ">Plugins <img height="18" width="37" class="pro-badge" src="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/pro-badge.svg" alt="Pro badge"></div><div style="display: flex; transition: max-width 0.3s; overflow: hidden; max-width: 0px;"><svg viewBox="0 0 166 166" height="1.2em" style="margin: 0px 0px 0px 0.5rem;" class="loader"><g fill="none" fill-rule="evenodd"><path d="M83 166c-45.84 0-83-37.16-83-83S37.16 0 83 0s83 37.16 83 83-37.16 83-83 83zm0-29c29.823 0 54-24.177 54-54s-24.177-54-54-54-54 24.177-54 54 24.177 54 54 54z" fill="currentColor" style="opacity: 0.2;"></path><path d="M137.008 83H137c0-29.823-24.177-54-54-54S29 53.177 29 83h-.008c.005.166.008.333.008.5C29 91.508 22.508 98 14.5 98S0 91.508 0 83.5c0-.167.003-.334.008-.5H0C0 37.16 37.16 0 83 0s83 37.16 83 83h-.008c.005.166.008.333.008.5 0 8.008-6.492 14.5-14.5 14.5S137 91.508 137 83.5c0-.167.003-.334.008-.5z" fill="currentColor"></path><animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="1s" from="0 83 83" to="360 83 83" repeatCount="indefinite"></animateTransform></g></svg></div></button><button type="button" class="button   
+      
+      
+        " data-transition="true">My Solutions<div style="display: flex; transition: max-width 0.3s; overflow: hidden; max-width: 0px;"><svg viewBox="0 0 166 166" height="1.2em" style="margin: 0px 0px 0px 0.5rem;" class="loader"><g fill="none" fill-rule="evenodd"><path d="M83 166c-45.84 0-83-37.16-83-83S37.16 0 83 0s83 37.16 83 83-37.16 83-83 83zm0-29c29.823 0 54-24.177 54-54s-24.177-54-54-54-54 24.177-54 54 24.177 54 54 54z" fill="currentColor" style="opacity: 0.2;"></path><path d="M137.008 83H137c0-29.823-24.177-54-54-54S29 53.177 29 83h-.008c.005.166.008.333.008.5C29 91.508 22.508 98 14.5 98S0 91.508 0 83.5c0-.167.003-.334.008-.5H0C0 37.16 37.16 0 83 0s83 37.16 83 83h-.008c.005.166.008.333.008.5 0 8.008-6.492 14.5-14.5 14.5S137 91.508 137 83.5c0-.167.003-.334.008-.5z" fill="currentColor"></path><animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="1s" from="0 83 83" to="360 83 83" repeatCount="indefinite"></animateTransform></g></svg></div></button><button type="button" class="button   
+      
+      
+        " data-transition="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="undefined" style="vertical-align: middle; margin-right: 0.5rem; margin-left: 0px;" xmlns="http://www.w3.org/2000/svg"><path d="M12 17a2 2 0 0 0 2-2 2 2 0 0 0-2-2 2 2 0 0 0-2 2 2 2 0 0 0 2 2m6-9a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2h1V6a5 5 0 0 1 5-5 5 5 0 0 1 5 5v2h1m-6-5a3 3 0 0 0-3 3v2h6V6a3 3 0 0 0-3-3Z" fill="currentColor"></path></svg>Top Solutions<div style="display: flex; transition: max-width 0.3s; overflow: hidden; max-width: 0px;"><svg viewBox="0 0 166 166" height="1.2em" style="margin: 0px 0px 0px 0.5rem;" class="loader"><g fill="none" fill-rule="evenodd"><path d="M83 166c-45.84 0-83-37.16-83-83S37.16 0 83 0s83 37.16 83 83-37.16 83-83 83zm0-29c29.823 0 54-24.177 54-54s-24.177-54-54-54-54 24.177-54 54 24.177 54 54 54z" fill="currentColor" style="opacity: 0.2;"></path><path d="M137.008 83H137c0-29.823-24.177-54-54-54S29 53.177 29 83h-.008c.005.166.008.333.008.5C29 91.508 22.508 98 14.5 98S0 91.508 0 83.5c0-.167.003-.334.008-.5H0C0 37.16 37.16 0 83 0s83 37.16 83 83h-.008c.005.166.008.333.008.5 0 8.008-6.492 14.5-14.5 14.5S137 91.508 137 83.5c0-.167.003-.334.008-.5z" fill="currentColor"></path><animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="1s" from="0 83 83" to="360 83 83" repeatCount="indefinite"></animateTransform></g></svg></div></button><button type="button" class="button  button--primary 
+      
+      
+        hint--top-left" data-transition="true" data-hint="Don't be afraid. You can submit multiple times"><div style="display: flex; gap: 0.3rem; align-items: center; justify-content: flex-start; flex-direction: row;" class="hstack ">Submit<div style="display: flex; gap: 0.25rem; align-items: center; justify-content: flex-start; flex-direction: row;" class="hstack "><kbd class="pill  pill--key ">⌘</kbd><kbd class="pill  pill--key ">Enter</kbd></div></div><div style="display: flex; transition: max-width 0.3s; overflow: hidden; max-width: 0px;"><svg viewBox="0 0 166 166" height="1.2em" style="margin: 0px 0px 0px 0.5rem;" class="loader"><g fill="none" fill-rule="evenodd"><path d="M83 166c-45.84 0-83-37.16-83-83S37.16 0 83 0s83 37.16 83 83-37.16 83-83 83zm0-29c29.823 0 54-24.177 54-54s-24.177-54-54-54-54 24.177-54 54 24.177 54 54 54z" fill="currentColor" style="opacity: 0.2;"></path><path d="M137.008 83H137c0-29.823-24.177-54-54-54S29 53.177 29 83h-.008c.005.166.008.333.008.5C29 91.508 22.508 98 14.5 98S0 91.508 0 83.5c0-.167.003-.334.008-.5H0C0 37.16 37.16 0 83 0s83 37.16 83 83h-.008c.005.166.008.333.008.5 0 8.008-6.492 14.5-14.5 14.5S137 91.508 137 83.5c0-.167.003-.334.008-.5z" fill="currentColor"></path><animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="1s" from="0 83 83" to="360 83 83" repeatCount="indefinite"></animateTransform></g></svg></div></button></div></div></div><div class="container__item container__item--scrollable container__item--output"><div class="item__header  "><div style="display: flex; gap: 0.5rem; align-items: center; justify-content: flex-start; flex-direction: row;" class="hstack "><h3 class="header__title">Code output</h3></div><div class="header__extra-info"><div style="display: flex; gap: 1rem; align-items: center; justify-content: flex-end; flex-direction: row;" class="hstack "><label style="display: flex; gap: 0.25rem; align-items: center;"><input type="checkbox" value="true" checked="checked"> Slide &amp; Compare</label><label style="display: flex; gap: 0.25rem; align-items: center;"><input type="checkbox" value="true"> Diff</label></div></div></div><div class="item__content"><div class="Preview_preview__pMaO6"><div class="target-container" style="position: relative; cursor: col-resize; touch-action: none; --scale-down: 0.9975;"><div style="overflow: hidden; width: 100%; height: 100%; position: relative; z-index: 1; mix-blend-mode: normal; opacity: 1; transition: 0.3s;"><iframe sandbox="allow-same-origin" class="preview-iframe" title="Preview" style="background: white; width: 400px; height: 300px; border: 0px; outline: 0px; pointer-events: none;"></iframe></div><div class="Preview_previewDistance__bcOmJ" style="opacity: 0; top: 100%; left: 400px; transform: translate(-50%);">400</div><img class="Preview_previewTargetImage__z7Wfx" alt="" src="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/user_e6YbeBahWNPT7VpE2rE2p85byxa2_targets_target_eqOh3mc.png" srcset="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/target_eqOh3mc@2x.png 2x"></div></div><div style="margin-top: 2rem;"><div class="RadioTabs_radioTabs__d9zDK RadioTabs_radioTabsFullWidth__oq2fN false "><label class="RadioTabs_radioTabBtn__aLbrp false"><input type="radio" name="tab" value="personal"><div class="RadioTabs_activeIndicator___CbYq false" style="opacity: 1;"></div><div style="position: relative; color: var(--clr-link); transition: 0.3s;">Your stats</div></label><label class="RadioTabs_radioTabBtn__aLbrp false"><input type="radio" name="tab" value="global"><div style="position: relative; color: var(--clr-text); transition: 0.3s;">Global stats</div></label></div></div><div style="opacity: 1; transform: none;"><div class="score-container"><div style="display: flex; gap: 1rem; align-items: stretch; justify-content: flex-start; flex-direction: column;" class=""><div style="display: flex; gap: 0.5rem; align-items: center; justify-content: flex-start; flex-flow: wrap;" class="hstack "><div class="leaderboard-stats-box "><div style="display: flex; gap: 0px; align-items: center; justify-content: flex-start; flex-direction: column;" class=""><div class="leaderboard-stats-box__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="var(--clr-brand)" color="var(--clr-brand)" style="color: var(--clr-brand); vertical-align: middle; margin-right: 0px; margin-left: 0px;" xmlns="http://www.w3.org/2000/svg"><path d="M6.45312 20.1328C6.01562 19.7969 5.92188 19.2422 6.15625 18.5547L7.71875 13.9219L3.74219 11.0781C3.14062 10.6484 2.875 10.1484 3.05469 9.60938C3.23438 9.09375 3.73438 8.83594 4.46875 8.84375L9.34375 8.88281L10.8281 4.22656C11.0547 3.51562 11.4375 3.11719 12 3.11719C12.5547 3.11719 12.9375 3.51562 13.1641 4.22656L14.6484 8.88281L19.5156 8.84375C20.2578 8.83594 20.7578 9.09375 20.9375 9.61719C21.1172 10.1484 20.8516 10.6484 20.25 11.0781L16.2734 13.9219L17.8359 18.5547C18.0703 19.2422 17.9766 19.7969 17.5391 20.1328C17.0938 20.4766 16.5391 20.3672 15.9297 19.9297L12 17.0312L8.05469 19.9297C7.45312 20.3672 6.89844 20.4766 6.45312 20.1328Z" fill="currentColor"></path></svg></div><div style="display: flex; gap: 0.5rem; align-items: center; justify-content: flex-start; flex-direction: row;" class="hstack "><span style="letter-spacing: 0.3px; font-size: var(--font-size-2); font-family: ClashGrotesk; font-weight: 700; text-align: left; line-height: 1.4; font-style: normal; text-transform: none; word-break: initial; color: var(--clr-heading);" class="">378.17</span><span style="letter-spacing: 0.3px; font-size: var(--font-size-2); font-family: ClashGrotesk; font-weight: 500; text-align: left; line-height: 1.4; font-style: normal; text-transform: none; word-break: initial; color: var(--clr-text-light);" class="">(89% match)</span></div><span style="letter-spacing: 0.3px; font-size: var(--font-size-0); font-family: ClashGrotesk; font-weight: 500; text-align: center; line-height: 1.4; font-style: normal; text-transform: none; word-break: initial; color: var(--clr-text-lightest-final);" class="">Last score</span></div></div><div class="leaderboard-stats-box "><div style="display: flex; gap: 0px; align-items: center; justify-content: flex-start; flex-direction: column;" class=""><div class="leaderboard-stats-box__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="var(--clr-brand)" color="var(--clr-brand)" style="color: var(--clr-brand); vertical-align: middle; margin-right: 0px; margin-left: 0px;" xmlns="http://www.w3.org/2000/svg"><path d="M5.6084 13.0278C5.6084 12.812 5.68311 12.6211 5.84912 12.4219L13.9673 2.53564C14.6313 1.73047 15.6606 2.26172 15.2871 3.24951L12.6641 10.189H17.686C18.0845 10.189 18.3833 10.4712 18.3833 10.853C18.3833 11.0688 18.3003 11.2598 18.1426 11.459L10.0161 21.3452C9.35205 22.1504 8.32275 21.6274 8.70459 20.6313L11.3276 13.6919H6.30566C5.89893 13.6919 5.6084 13.4097 5.6084 13.0278Z" fill="currentColor"></path></svg></div><div style="display: flex; gap: 0.5rem; align-items: center; justify-content: flex-start; flex-direction: row;" class="hstack "><span style="letter-spacing: 0.3px; font-size: var(--font-size-2); font-family: ClashGrotesk; font-weight: 700; text-align: left; line-height: 1.4; font-style: normal; text-transform: none; word-break: initial; color: var(--clr-heading);" class="">378.17</span><span style="letter-spacing: 0.3px; font-size: var(--font-size-2); font-family: ClashGrotesk; font-weight: 500; text-align: left; line-height: 1.4; font-style: normal; text-transform: none; word-break: initial; color: var(--clr-text-light);" class="">{959}</span></div><span style="letter-spacing: 0.3px; font-size: var(--font-size-0); font-family: ClashGrotesk; font-weight: 500; text-align: center; line-height: 1.4; font-style: normal; text-transform: none; word-break: initial; color: var(--clr-text-lightest-final);" class="">High score </span></div></div></div><div style="display: flex; gap: 0.5rem; align-items: center; justify-content: flex-start; flex-direction: row;" class="hstack "> <button type="button" class="dropdown-container width--full"><div class="dropdown-btn   width--full"><svg width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="undefined" style="vertical-align: middle; margin-right: 0.5rem; margin-left: 0px;" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M18 16.08C17.24 16.08 16.56 16.38 16.04 16.85L8.91 12.7C8.96 12.47 9 12.24 9 12S8.96 11.53 8.91 11.3L15.96 7.19C16.5 7.69 17.21 8 18 8C19.66 8 21 6.66 21 5S19.66 2 18 2 15 3.34 15 5C15 5.24 15.04 5.47 15.09 5.7L8.04 9.81C7.5 9.31 6.79 9 6 9C4.34 9 3 10.34 3 12S4.34 15 6 15C6.79 15 7.5 14.69 8.04 14.19L15.16 18.34C15.11 18.55 15.08 18.77 15.08 19C15.08 20.61 16.39 21.91 18 21.91S20.92 20.61 20.92 19C20.92 17.39 19.61 16.08 18 16.08M18 4C18.55 4 19 4.45 19 5S18.55 6 18 6 17 5.55 17 5 17.45 4 18 4M6 13C5.45 13 5 12.55 5 12S5.45 11 6 11 7 11.45 7 12 6.55 13 6 13M18 20C17.45 20 17 19.55 17 19S17.45 18 18 18 19 18.45 19 19 18.55 20 18 20Z"></path></svg>Challenge</div></button></div></div></div></div></div></div><div class="container__item container__item--scrollable container__item--target"><div class="item__header  "><div style="display: flex; gap: 0.5rem; align-items: center; justify-content: flex-start; flex-direction: row;" class="hstack "><h3 class="header__title">Recreate this target</h3></div><div class="header__extra-info">400px x 300px</div></div><div class="item__content"><img alt="" width="400" class="levelpage__target" src="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/user_e6YbeBahWNPT7VpE2rE2p85byxa2_targets_target_eqOh3mc.png" srcset="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/target_eqOh3mc@2x.png 2x"><div style="display: flex; gap: 1rem; align-items: stretch; justify-content: flex-start; flex-direction: column;" class=""><div class="inner-header"><div style="display: flex; gap: 0.5rem; align-items: center; justify-content: flex-start; flex-direction: row;" class="hstack "><h4 class="header__title header__title--inner">Colors</h4><div style="display: flex; gap: 0.25rem; align-items: center; justify-content: flex-start; flex-direction: row;" class="hstack "><kbd class="pill  pill--key ">ctrl</kbd><kbd class="pill  pill--key ">shift</kbd><kbd class="pill  pill--key ">c</kbd></div></div></div><ul class="colors-list"><li style="opacity: 1; transform: none;"><button type="button" aria-label="Copy color #EBF6F0" class="js-target-color colors-list__color" style="--color: #EBF6F0;">#EBF6F0</button></li><li style="opacity: 1; transform: none;"><button type="button" aria-label="Copy color #4E4B44" class="js-target-color colors-list__color" style="--color: #4E4B44;">#4E4B44</button></li><li style="opacity: 1; transform: none;"><button type="button" aria-label="Copy color #4A9A86" class="js-target-color colors-list__color" style="--color: #4A9A86;">#4A9A86</button></li></ul></div><div class="inner-header"><h4 class="header__title header__title--inner">Target Sponsor</h4></div><div class="sponsor-containerr"><div data-ea-publisher="cssbattle-dev" class="horizontal flat dark" data-ea-type="image"></div><script async="" src="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/ethicalads.min.js"></script><div class="no-sponsor"><a href="https://webmaker.app/?utm_source=cssbattle-inner" target="_blank" rel="noopener"><img src="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/webmaker-banner.png" class="bytes-target-sponsor-img"></a></div></div></div></div></div><div class="sidebar-container "><div class="underlay"></div><div class="sidebar sidebar--left "><button class="sidebar__close no-icon"><svg width="33px" height="33px" viewBox="0 0 24 24" fill="undefined" style="vertical-align: middle; margin-right: 0.5rem; margin-left: 0px;" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" fill-rule="evenodd" d="M12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12Zm4.016-10.09L8.182 6H6.318v1.881l7.835 7.911-.928.948.928.937 1.139-1.18 2.12 2.107c.257.26.671.26.928 0l.467-.472a.667.667 0 0 0 0-.937l-2.093-2.114 1.214-1.144L17 13l-.984.91Zm1.666-6.035-3.121 3.15-1.863-1.874L15.818 6h1.864v1.875Zm-8.243 4.567 1.863 1.908-1.455 1.442.928.948-.928.937-1.139-1.18-2.12 2.114a.651.651 0 0 1-.928 0l-.467-.472a.667.667 0 0 1 0-.938l2.093-2.12-.968-.97.929-.938.737.738 1.455-1.47Z" clip-rule="evenodd"></path></svg></button><div class="sidebar__content"></div></div></div><div class="sidebar-container "><div class="underlay"></div><div class="sidebar sidebar--right "><button class="sidebar__close no-icon"><svg width="33px" height="33px" viewBox="0 0 24 24" fill="undefined" style="vertical-align: middle; margin-right: 0.5rem; margin-left: 0px;" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" fill-rule="evenodd" d="M12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12Zm4.016-10.09L8.182 6H6.318v1.881l7.835 7.911-.928.948.928.937 1.139-1.18 2.12 2.107c.257.26.671.26.928 0l.467-.472a.667.667 0 0 0 0-.937l-2.093-2.114 1.214-1.144L17 13l-.984.91Zm1.666-6.035-3.121 3.15-1.863-1.874L15.818 6h1.864v1.875Zm-8.243 4.567 1.863 1.908-1.455 1.442.928.948-.928.937-1.139-1.18-2.12 2.114a.651.651 0 0 1-.928 0l-.467-.472a.667.667 0 0 1 0-.938l2.093-2.12-.968-.97.929-.938.737.738 1.455-1.47Z" clip-rule="evenodd"></path></svg></button><div class="sidebar__content"></div></div></div><div class="sidebar-container "><div class="underlay"></div><div class="sidebar sidebar--left "><button class="sidebar__close no-icon"><svg width="33px" height="33px" viewBox="0 0 24 24" fill="undefined" style="vertical-align: middle; margin-right: 0.5rem; margin-left: 0px;" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" fill-rule="evenodd" d="M12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12Zm4.016-10.09L8.182 6H6.318v1.881l7.835 7.911-.928.948.928.937 1.139-1.18 2.12 2.107c.257.26.671.26.928 0l.467-.472a.667.667 0 0 0 0-.937l-2.093-2.114 1.214-1.144L17 13l-.984.91Zm1.666-6.035-3.121 3.15-1.863-1.874L15.818 6h1.864v1.875Zm-8.243 4.567 1.863 1.908-1.455 1.442.928.948-.928.937-1.139-1.18-2.12 2.114a.651.651 0 0 1-.928 0l-.467-.472a.667.667 0 0 1 0-.938l2.093-2.12-.968-.97.929-.938.737.738 1.455-1.47Z" clip-rule="evenodd"></path></svg></button><div class="sidebar__content"><div><div class="item__header  "><div style="display: flex; gap: 0.5rem; align-items: center; justify-content: flex-start; flex-direction: row;" class="hstack "><h3 class="header__title">Last Submissions</h3></div><div class="header__extra-info">0 submissions</div></div><div class="item__content"><div class="submissions-container"><p class="section-helper">You don't have any submissions.</p><ul class="submissions-list" style="filter: blur(0px); opacity: 1;"></ul></div></div></div></div></div></div><div class="sidebar-container "><div class="underlay"></div><div class="sidebar sidebar--left "><button class="sidebar__close no-icon"><svg width="33px" height="33px" viewBox="0 0 24 24" fill="undefined" style="vertical-align: middle; margin-right: 0.5rem; margin-left: 0px;" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" fill-rule="evenodd" d="M12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12Zm4.016-10.09L8.182 6H6.318v1.881l7.835 7.911-.928.948.928.937 1.139-1.18 2.12 2.107c.257.26.671.26.928 0l.467-.472a.667.667 0 0 0 0-.937l-2.093-2.114 1.214-1.144L17 13l-.984.91Zm1.666-6.035-3.121 3.15-1.863-1.874L15.818 6h1.864v1.875Zm-8.243 4.567 1.863 1.908-1.455 1.442.928.948-.928.937-1.139-1.18-2.12 2.114a.651.651 0 0 1-.928 0l-.467-.472a.667.667 0 0 1 0-.938l2.093-2.12-.968-.97.929-.938.737.738 1.455-1.47Z" clip-rule="evenodd"></path></svg></button><div class="sidebar__content"></div></div></div><div class=""><div class="underlay"></div></div></div></div><div class="v2-footer"><div style="display:flex;gap:1rem;align-items:center;justify-content:center;flex-direction:row" class="hstack hstack--responsive"><div class="footer__copyright">© <!-- -->2025<!-- --> CSSBattle</div><div class="footer__links"><div style="display:flex;gap:1.5rem;align-items:center;justify-content:flex-end;flex-direction:row" class="hstack "><div style="color:var(--clr-text-lightest-final);font-weight:500"><span style="font-weight:500;color:var(--clr-brand)">414691</span> <!-- -->players</div><a href="https://discord.gg/rvqvbcFM86" target="_blank" rel="external noopener noreferrer" class="hint--top-left" aria-label="Join on Discord"><svg width="18" height="18" viewBox="0 0 24 24" fill="undefined" style="color:undefined;vertical-align:middle;margin-right:0;margin-left:0" xmlns="http://www.w3.org/2000/svg"><path d="M15.0665 3.75452H15.0213L14.7166 4.05615C17.843 4.96104 19.3557 6.37418 19.3557 6.37418C17.3408 5.36674 15.525 4.86301 13.7092 4.65941C12.3971 4.45581 11.085 4.56289 9.9765 4.65941H9.67487C8.96604 4.65941 7.45789 4.96104 5.43697 5.7679C4.73267 6.07406 4.32848 6.27464 4.32848 6.27464C4.32848 6.27464 5.83965 4.76348 9.16964 3.95662L8.96604 3.75302C8.96604 3.75302 6.44441 3.6565 3.72221 5.66836C3.72221 5.66836 1 10.41 1 16.2556C1 16.2556 2.50815 18.8797 6.645 18.9793C6.645 18.9793 7.24826 18.1754 7.85906 17.4681C5.53651 16.7623 4.63162 15.3507 4.63162 15.3507C4.63162 15.3507 4.83371 15.4502 5.13685 15.6523H5.22734C5.27258 15.6523 5.2937 15.6749 5.31783 15.6975V15.7066C5.34196 15.7307 5.36307 15.7518 5.40832 15.7518C5.90601 15.957 6.4037 16.159 6.8109 16.3551C7.51369 16.6597 8.41707 16.9629 9.52556 17.1635C10.9281 17.3671 12.5358 17.4651 14.3667 17.1635C15.2716 16.9599 16.1765 16.7608 17.0814 16.3566C17.6696 16.055 18.3935 15.7534 19.1883 15.2451C19.1883 15.2451 18.2834 16.6567 15.8628 17.3625C16.3605 18.0653 17.0618 18.8707 17.0618 18.8707C21.2001 18.7802 22.8078 16.156 22.8983 16.2676C22.8983 10.4311 20.161 5.68043 20.161 5.68043C17.6952 3.84954 15.3877 3.78016 14.9805 3.78016L15.065 3.75L15.0665 3.75452ZM15.3199 10.41C16.3801 10.41 17.2352 11.3149 17.2352 12.4234C17.2352 13.5394 16.3756 14.4443 15.3199 14.4443C14.2642 14.4443 13.4045 13.5394 13.4045 12.4324C13.4075 11.3164 14.2687 10.4145 15.3199 10.4145V10.41ZM8.46835 10.41C9.52405 10.41 10.3777 11.3149 10.3777 12.4234C10.3777 13.5394 9.51802 14.4443 8.46232 14.4443C7.40661 14.4443 6.54697 13.5394 6.54697 12.4324C6.54697 11.3164 7.40661 10.4145 8.46232 10.4145L8.46835 10.41Z" fill="currentColor"></path></svg></a><a href="https://bsky.app/profile/cssbattle.dev" target="_blank" rel="external noopener noreferrer" class="hint--top-left" aria-label="Join on Bluesky"><svg width="18" height="18" viewBox="0 0 24 24" fill="undefined" style="color:undefined;vertical-align:middle;margin-right:0;margin-left:0" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M5.769 2.48C8.29 4.632 11.004 8.993 12 11.333c.996-2.34 3.709-6.7 6.231-8.851C20.051.929 23-.272 23 3.549c0 .763-.385 6.41-.611 7.327-.785 3.187-3.647 4-6.192 3.508 4.449.86 5.58 3.709 3.136 6.557-4.642 5.41-6.672-1.357-7.192-3.091-.096-.318-.14-.467-.141-.34 0-.127-.045.022-.14.34-.52 1.734-2.55 8.502-7.193 3.091-2.445-2.848-1.313-5.697 3.136-6.557-2.545.492-5.407-.321-6.192-3.508C1.385 9.959 1 4.312 1 3.549 1-.271 3.949.929 5.769 2.481Z"></path></svg></a><a href="https://x.com/css_battle" target="_blank" rel="external noopener noreferrer" class="hint--top-left" aria-label="Join on X"><svg width="18" height="18" viewBox="0 0 24 24" fill="undefined" style="color:undefined;vertical-align:middle;margin-right:0;margin-left:0" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M13.9027 10.4643L21.3482 2H19.5838L13.1189 9.34942L7.95547 2H2L9.8082 13.1136L2 21.9897H3.76443L10.5915 14.2285L16.0445 21.9897H22L13.9027 10.4643ZM11.4861 13.2115L10.695 12.1049L4.40018 3.29901H7.11025L12.1902 10.4056L12.9813 11.5123L19.5847 20.7498H16.8746L11.4861 13.2115Z"></path></svg></a><a href="mailto:contact@cssbattle.dev" target="_blank" rel="external noopener noreferrer" class="hint--top-left" aria-label="Contact us"><svg width="18" height="18" viewBox="0 0 24 24" fill="undefined" style="color:undefined;vertical-align:middle;margin-right:0;margin-left:0" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"></path></svg></a></div></div></div><div style="display:flex;gap:1rem;align-items:center;justify-content:space-between;flex-direction:row" class="hstack "><div class="footer__links"><div style="display:flex;gap:4rem;align-items:flex-start;justify-content:center;flex-direction:row" class="hstack "><div style="display:flex;gap:0.75rem;align-items:flex-start;justify-content:flex-start;flex-direction:column" class=""><h3 class="footer__column-title">Play</h3><a href="https://cssbattle.dev/battles">Battles</a><a href="https://cssbattle.dev/daily">Daily Targets</a><a href="https://cssbattle.dev/versus">Versus</a></div><div style="display:flex;gap:0.75rem;align-items:flex-start;justify-content:flex-start;flex-direction:column" class=""><h3 class="footer__column-title">Learn</h3><a href="https://cssbattle.dev/blog">Blog</a><a href="https://cssbattle.dev/learn">CSS Courses</a><a href="https://cssbattle.dev/newsletter">Newsletter</a><a href="https://www.youtube.com/playlist?list=PLe7lg7RCOjYf3IAEO6152Elij3VUB8WSk" target="_blank">Saturday Night Live</a></div><div style="display:flex;gap:0.75rem;align-items:flex-start;justify-content:flex-start;flex-direction:column" class=""><h3 class="footer__column-title">The Game</h3><a href="https://cssbattle.dev/tips">Tips &amp; Tricks</a><a href="https://cssbattle.dev/faqs">FAQs</a><a href="https://community.cssbattle.dev/" target="_blank" rel="external noopener noreferrer">Community</a></div><div style="display:flex;gap:0.75rem;align-items:flex-start;justify-content:flex-start;flex-direction:column" class=""><h3 class="footer__column-title">CSSBattle</h3><a href="https://cssbattle.dev/about">About Us</a><a href="https://cssbattle.dev/hall-of-love">Hall of ❤️</a><a href="https://cssbattle.dev/privacy-and-terms">Privacy &amp; Terms</a><a href="https://cssbattle.dev/cssbattle-presskit.zip" download="">Press Kit</a><a href="https://cssbattle.dev/advertise">Advertise</a></div></div></div></div><div class="footer__deco"><img src="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/3.png"><img src="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/223.png"><img src="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/224.png"><img src="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/212.png"><img src="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/1.png"><img src="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/22.png"><img src="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/23.png"><img src="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/122.png"><img src="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/221.png"></div></div></div></div><div class="Toastify"></div><div id="portal-root"></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/","query":{},"buildId":"IzeocPGSAzeY6Jtx1o1wJ","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script><script src="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/google-analytics_analytics.js" async=""></script><next-route-announcer><p aria-live="assertive" id="__next-route-announcer__" role="alert" style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; overflow-wrap: normal;">CSSBattle</p></next-route-announcer><script src="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/[username]-7c43cecc59a7bb1f.js"></script><script src="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/dccc8973-9e321c0b0b3792cb.js"></script><script src="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/2272ea81-87dbf9f7fec5f81a.js"></script><script src="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/2152-050b983364f78e5a.js"></script><script src="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/2476-3a9a59928a638b21.js"></script><script src="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/1441-28dd449470d58d9d.js"></script><script src="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/380-38246c41c9efbd3c.js"></script><script src="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/723-b97c22d51dd9eacd.js"></script><script src="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/[levelId]-31954ea3bc7c87af.js"></script><script src="Target%20(6_5_2025)%20-%20CSSBattle_fichiers/daily-123b70c3131349a2.js"></script></body></html>
